@@ -4,9 +4,9 @@ import theme from "./theme";
 const GlobalStyles = createGlobalStyle`
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 html {
-  line-height: 1.15; /* 1 */
+  line-height: 1rem; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Lato', sans-serif;
   color: ${theme.colors.black};
 }
 body {
@@ -15,20 +15,19 @@ body {
 main {
   display: block;
 }
-h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  text-align: center;
-  margin: 0;
-  @media screen and (min-width: 768px) {
-    font-size: 3rem;
-  }
-  @media screen and (min-width: 1024px) {
-    font-size: 4rem;
-  }
+h1, h2, h3 {
+    margin: 0;
 }
-h2, h3 {
-  margin: 0;
+h1 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: ${theme.colors.darkGray};
+    margin: 0;
+    line-height: 1rem;
 }
 hr {
   box-sizing: content-box; /* 1 */
@@ -83,7 +82,6 @@ select,
 textarea {
   font-family: inherit; /* 1 */
   font-size: 100%; /* 1 */
-  line-height: 1.15; /* 1 */
   margin: 0; /* 2 */
 }
 button,
