@@ -1,4 +1,21 @@
-const Main = () => {
-  return <div>Main</div>;
+import DisplayShowcase from "../DisplayShowcase";
+import { StyledMainContainer } from "./Main.styles";
+
+type IMainProps = {
+  cars: {
+    title: string;
+    img: string;
+    price: number;
+  }[];
+};
+
+const Main = ({ cars }: IMainProps) => {
+  return (
+    <StyledMainContainer>
+      {cars.map((car) => (
+        <DisplayShowcase h1Text={car.title} img={car.img} price={car.price} />
+      ))}
+    </StyledMainContainer>
+  );
 };
 export default Main;

@@ -4,12 +4,18 @@ import Arrow from "../../icons/Arrow";
 
 export const StyledButtonPrimary = styled.button`
   display: flex;
-  padding: 0.8rem;
+  padding: 0.68rem;
   border: 2px solid ${theme.colors.darkGray};
   border-radius: 0.25rem;
   width: 100%;
   background-color: ${theme.colors.darkGray};
   color: ${theme.colors.white};
+  margin-bottom: 1rem;
+
+  &:hover {
+    background-color: ${theme.colors.darkGrayHover};
+    border: 2px solid ${theme.colors.darkGrayHover};
+  }
 
   & svg {
     position: absolute;
