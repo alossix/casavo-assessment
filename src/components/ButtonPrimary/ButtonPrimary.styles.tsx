@@ -21,7 +21,7 @@ export const StyledButtonPrimary = styled.button`
   & svg {
     position: absolute;
     top: 0.8rem;
-    transform: rotate(90deg);
+    transform: rotate(180deg);
 
     & path {
       fill: ${theme.colors.white};
@@ -35,8 +35,10 @@ export const StyledButtonPrimary = styled.button`
     border: 2px solid ${theme.colors.darkGray};
 
     & svg {
-      & path {
-        fill: ${theme.colors.darkGray};
+      & g {
+        & polygon {
+          fill: ${theme.colors.darkGray};
+        }
       }
     }
 
@@ -45,8 +47,10 @@ export const StyledButtonPrimary = styled.button`
       color: ${theme.colors.white};
 
       & svg {
-        & path {
-          fill: ${theme.colors.white};
+        & g {
+          & polygon {
+            fill: ${theme.colors.white};
+          }
         }
       }
     }

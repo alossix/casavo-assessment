@@ -37,7 +37,7 @@ const DisplayShowcase = ({ h1Text, img, price }: IDisplayShowcaseProps) => {
           onClick={() => setChecked(!checked)}
           checked={checked}
         >
-          <Checkmark />
+          {checked && <Checkmark />}
         </StyledCheckButton>
       </StyledCheckButtonContainer>
     </StyledDisplayContainer>
