@@ -63,16 +63,16 @@ export const StyledSelectedCarImageContainer = styled.div<{
   ${({ active }) =>
     !active
       ? `
-    animation-name: sliderReverse;
-    animation-duration: 0.2s;
-    border-right: none;
+      animation-name: sliderReverse;
+      animation-duration: 0.2s;
+      border-right: none;
   `
       : `
       display: flex;
-    padding-right: 1.7rem;
-    margin-right: 1.7rem;
-    animation-name: slider;
-    animation-duration: 0.2s;
+      padding-right: 1.7rem;
+      margin-right: 1.7rem;
+      animation-name: slider;
+      animation-duration: 0.2s;
   `}
 `;
 
