@@ -1,5 +1,8 @@
 import DisplayShowcase from "../DisplayShowcase";
-import { StyledMainContainer } from "./Main.styles";
+import {
+  StyledDisplayShowcaseContainer,
+  StyledMainContainer,
+} from "./Main.styles";
 
 type IMainProps = {
   cars: {
@@ -13,14 +16,16 @@ type IMainProps = {
 const Main = ({ cars }: IMainProps) => {
   return (
     <StyledMainContainer>
-      {cars.map((car) => (
-        <DisplayShowcase
-          key={car.id}
-          h1Text={car.title}
-          img={car.img}
-          price={car.price}
-        />
-      ))}
+      <StyledDisplayShowcaseContainer>
+        {cars.map((car) => (
+          <DisplayShowcase
+            key={car.id}
+            h1Text={car.title}
+            img={car.img}
+            price={car.price}
+          />
+        ))}
+      </StyledDisplayShowcaseContainer>
     </StyledMainContainer>
   );
 };

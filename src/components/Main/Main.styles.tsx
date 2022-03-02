@@ -9,3 +9,8 @@ export const StyledMainContainer = styled.section`
     flex-direction: row;
   }
 `;
+
+export const StyledDisplayShowcaseContainer = styled.div`
+  display: flex;
+  gap: 3rem;
+`;

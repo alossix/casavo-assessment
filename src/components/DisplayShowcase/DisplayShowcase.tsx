@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Checkmark from "../../icons/Checkmark";
 import {
   StyledCheckButtonContainer,
   StyledCheckButton,
@@ -35,7 +36,9 @@ const DisplayShowcase = ({ h1Text, img, price }: IDisplayShowcaseProps) => {
         <StyledCheckButton
           onClick={() => setChecked(!checked)}
           checked={checked}
-        ></StyledCheckButton>
+        >
+          <Checkmark />
+        </StyledCheckButton>
       </StyledCheckButtonContainer>
     </StyledDisplayContainer>
   );

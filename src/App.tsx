@@ -29,8 +29,8 @@ const App = () => {
         <StyledInnerContainer>
           <Header step={1} />
           <Main cars={cars} />
-          <Footer />
         </StyledInnerContainer>
+        <Footer />
       </StyledSection>
     </ThemeProvider>
   );
