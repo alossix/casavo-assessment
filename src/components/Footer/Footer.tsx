@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <StyledFooter>
       <StyledFooterNav>
-        <TotalPrice totalPrice={selectedCar.price} />
+        <TotalPrice />
         <ButtonSecondary>Colors</ButtonSecondary>
       </StyledFooterNav>
     </StyledFooter>

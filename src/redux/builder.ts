@@ -4,7 +4,7 @@ type ICarState = {
   id: number | undefined;
   title: string;
   img: string;
-  price: number | undefined;
+  price: number;
 };
 
 type IBuilderState = {
@@ -13,10 +13,10 @@ type IBuilderState = {
 
 const initialState: IBuilderState = {
   selectedCar: {
-    id: undefined,
+    id: 0,
     title: "",
     img: "",
-    price: undefined,
+    price: 0,
   },
 };
 

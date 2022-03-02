@@ -1,27 +1,37 @@
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 import {
+  StyledSelectedCarImageContainer,
   StyledTotalPriceContainer,
   StyledTotalTitle,
   StyledTotalPrice,
+  StyledTotalPriceOuterContainer,
 } from "./TotalPrice.styles";
-type ITotalPriceProps = {
-  totalPrice: number | undefined;
-};
-const TotalPrice = ({ totalPrice }: ITotalPriceProps) => {
+
+const TotalPrice = () => {
+  const selectedCar = useSelector(
+    (state: RootState) => state.builder.selectedCar
+  );
+  const totalPrice = selectedCar.price;
+
   return (
-    <StyledTotalPriceContainer>
-      <StyledTotalTitle>Total</StyledTotalTitle>
-      <StyledTotalPrice>
-        {!totalPrice
-          ? `$0`
-          : totalPrice
-              .toLocaleString("en-US", {
-                style: "currency",
-                currency: "USD",
-                maximumFractionDigits: 0,
-              })
-              .replace(",", ".")}
-      </StyledTotalPrice>
-    </StyledTotalPriceContainer>
+    <StyledTotalPriceOuterContainer>
+      <StyledSelectedCarImageContainer active={selectedCar.id !== 0}>
+        <img src={selectedCar.img} alt={selectedCar.title} />
+      </StyledSelectedCarImageContainer>
+      <StyledTotalPriceContainer>
+        <StyledTotalTitle>Total</StyledTotalTitle>
+        <StyledTotalPrice>
+          {totalPrice
+            .toLocaleString("en-US", {
+              style: "currency",
+              currency: "USD",
+              maximumFractionDigits: 0,
+            })
+            .replace(",", "")}
+        </StyledTotalPrice>
+      </StyledTotalPriceContainer>
+    </StyledTotalPriceOuterContainer>
   );
 };
 export default TotalPrice;

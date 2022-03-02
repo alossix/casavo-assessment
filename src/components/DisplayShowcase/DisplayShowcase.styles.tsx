@@ -11,7 +11,7 @@ export const StyledDisplayContainer = styled.div<{ checked: boolean }>`
   cursor: pointer;
   border: 2px solid
     ${({ checked }) => (checked ? theme.colors.gold : theme.colors.lightGray)};
-  transition: 0.5s ease;
+  transition: 0.3s ease;
 `;
 
 export const StyledDisplayContainerTitle = styled.span`
