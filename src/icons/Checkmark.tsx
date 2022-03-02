@@ -14,11 +14,11 @@ const Checkmark = ({ className }: HTMLAttributes<HTMLElement>): JSX.Element => (
       <polyline
         fill="none"
         stroke="#ffffff"
-        stroke-width="2"
-        stroke-linecap="square"
-        stroke-miterlimit="10"
+        strokeWidth="2"
+        strokeLinecap="square"
+        strokeMiterlimit="10"
         points="2,12 9,19 22,6 &#10;&#9;"
-        stroke-linejoin="miter"
+        strokeLinejoin="miter"
       />
     </g>
   </svg>

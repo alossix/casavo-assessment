@@ -1,5 +1,7 @@
 import { useState } from "react";
-import Checkmark from "../../icons/Checkmark";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { selectCar } from "../../redux/builder";
 import {
   StyledCheckButtonContainer,
   StyledCheckButton,
@@ -8,9 +10,11 @@ import {
   StyledImg,
   StyledPriceSpan,
 } from "./DisplayShowcase.styles";
+import Checkmark from "../../icons/Checkmark";
 
 type IDisplayShowcaseProps = {
   h1Text: string;
+  id: number;
   img: string;
   price: number;
 };
@@ -25,19 +29,26 @@ const displayPriceString = (price: number) => {
     .replace(",", ".");
 };
 
-const DisplayShowcase = ({ h1Text, img, price }: IDisplayShowcaseProps) => {
-  const [checked, setChecked] = useState(false);
+const DisplayShowcase = ({ h1Text, id, img, price }: IDisplayShowcaseProps) => {
+  const selectedCar = useSelector(
+    (state: RootState) => state.builder.selectedCar
+  );
+  const dispatch = useDispatch();
   return (
     <StyledDisplayContainer
-      checked={checked}
-      onClick={() => setChecked(!checked)}
+      checked={selectedCar.id === id}
+      onClick={() => {
+        selectedCar.id === id
+          ? dispatch(selectCar({ id: 0, title: "", img: "", price: 0 }))
+          : dispatch(selectCar({ id, title: h1Text, img, price }));
+      }}
     >
       <StyledDisplayContainerTitle>{h1Text}</StyledDisplayContainerTitle>
       <StyledImg src={img} />
       <StyledPriceSpan>from {displayPriceString(price)}</StyledPriceSpan>
       <StyledCheckButtonContainer>
-        <StyledCheckButton checked={checked}>
-          {checked && <Checkmark />}
+        <StyledCheckButton checked={selectedCar.id === id}>
+          {selectedCar.id === id && <Checkmark />}
         </StyledCheckButton>
       </StyledCheckButtonContainer>
     </StyledDisplayContainer>

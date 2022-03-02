@@ -21,6 +21,7 @@ const Main = ({ cars }: IMainProps) => {
           <DisplayShowcase
             key={car.id}
             h1Text={car.title}
+            id={car.id}
             img={car.img}
             price={car.price}
           />
