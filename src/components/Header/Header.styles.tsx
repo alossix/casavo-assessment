@@ -12,6 +12,10 @@ export const StyledMobileInnerContainer = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 1rem;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 2rem;
+  }
 `;
 
 export const StyledDesktopInnerContainer = styled.div`
@@ -21,7 +25,7 @@ export const StyledDesktopInnerContainer = styled.div`
   & button {
     position: absolute;
     left: 2rem;
-    top: 2rem;
+    top: 2.5rem;
   }
 `;
 

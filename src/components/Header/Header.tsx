@@ -8,6 +8,7 @@ import {
   StyledMobileInnerContainer,
   StyledDesktopInnerContainer,
 } from "./Header.styles";
+import StepMenu from "../StepMenu";
 
 type IHeaderProps = {
   step: number;
@@ -28,10 +29,13 @@ const Header = ({ step }: IHeaderProps) => {
           </>
         )}
         {size.width >= 1024 && (
-          <StyledDesktopInnerContainer>
-            <ButtonPrimary>Article & Download</ButtonPrimary>
-            <StyledDesktopH1>Product Builder</StyledDesktopH1>
-          </StyledDesktopInnerContainer>
+          <>
+            <StyledDesktopInnerContainer>
+              <ButtonPrimary>Article & Download</ButtonPrimary>
+              <StyledDesktopH1>Product Builder</StyledDesktopH1>
+            </StyledDesktopInnerContainer>
+            <StepMenu step={step} />
+          </>
         )}
       </StyledHeaderContainer>
     </>
