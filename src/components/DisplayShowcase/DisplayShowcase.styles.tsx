@@ -32,6 +32,14 @@ export const StyledPriceSpan = styled.span`
   color: ${theme.colors.darkGray};
 `;
 
+export const StyledCheckButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  width: 100%;
+`;
+
 export const StyledCheckButton = styled.button<{ checked: boolean }>`
   @keyframes checkbox {
     0% {
@@ -43,30 +51,49 @@ export const StyledCheckButton = styled.button<{ checked: boolean }>`
       height: 2.5rem;
     }
     50% {
-      width: 2.75rem;
-      height: 2.75rem;
+      width: 2.9rem;
+      height: 2.9rem;
     }
-    100% {
+    75% {
+      width: 2.7rem;
+      height: 2.7rem;
+    }
+  }
+
+  @keyframes checkboxUnchecked {
+    0% {
       width: 2.5rem;
       height: 2.5rem;
     }
+    25% {
+      width: 2.35rem;
+      height: 2.35rem;
+    }
+    50% {
+      width: 2.2rem;
+      height: 2.2rem;
+    }
+    75% {
+      width: 2.05rem;
+      height: 2.05rem;
+    }
   }
-  position: absolute;
-  bottom: 2.9rem;
   background-color: transparent;
   border: 2px solid ${theme.colors.lightGray};
   width: 1.9rem;
   height: 1.9rem;
   border-radius: 100%;
+  animation-name: checkboxUnchecked;
+  animation-duration: 0.25s;
 
   ${({ checked }) =>
     checked &&
     `
       animation-name: checkbox;
-      animation-duration: 0.3s;
-      width: 2.5rem;
-      height: 2.5rem;
+      animation-duration: 0.35s;
+      width: 2.6rem;
+      height: 2.6rem;
       background-color: ${theme.colors.gold};
       border: 2px solid ${theme.colors.gold};
-  `}
+  `};
 `;

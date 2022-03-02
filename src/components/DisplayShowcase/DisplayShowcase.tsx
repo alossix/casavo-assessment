@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {
+  StyledCheckButtonContainer,
   StyledCheckButton,
   StyledDisplayContainer,
   StyledDisplayContainerTitle,
@@ -30,10 +31,12 @@ const DisplayShowcase = ({ h1Text, img, price }: IDisplayShowcaseProps) => {
       <StyledDisplayContainerTitle>{h1Text}</StyledDisplayContainerTitle>
       <StyledImg src={img} />
       <StyledPriceSpan>from {displayPriceString(price)}</StyledPriceSpan>
-      <StyledCheckButton
-        onClick={() => setChecked(!checked)}
-        checked={checked}
-      ></StyledCheckButton>
+      <StyledCheckButtonContainer>
+        <StyledCheckButton
+          onClick={() => setChecked(!checked)}
+          checked={checked}
+        ></StyledCheckButton>
+      </StyledCheckButtonContainer>
     </StyledDisplayContainer>
   );
 };
