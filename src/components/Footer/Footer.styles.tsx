@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledFooterNav = styled.nav`
+export const StyledFooter = styled.footer`
   display: flex;
   width: 100%;
   position: fixed;
@@ -11,5 +11,16 @@ export const StyledFooterNav = styled.nav`
   @media screen and (min-width: 1024px) {
     height: 7.5rem;
     box-shadow: 0 0 40px rgb(0 0 0 / 10%);
+  }
+`;
+
+export const StyledFooterNav = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 2rem;
   }
 `;

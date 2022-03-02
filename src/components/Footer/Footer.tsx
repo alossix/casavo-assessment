@@ -1,11 +1,15 @@
 import ButtonSecondary from "../ButtonSecondary";
-import { StyledFooterNav } from "./Footer.styles";
+import TotalPrice from "../TotalPrice";
+import { StyledFooter, StyledFooterNav } from "./Footer.styles";
 
 const Footer = () => {
   return (
-    <StyledFooterNav>
-      <ButtonSecondary>Colors</ButtonSecondary>
-    </StyledFooterNav>
+    <StyledFooter>
+      <StyledFooterNav>
+        <TotalPrice totalPrice={0} />
+        <ButtonSecondary>Colors</ButtonSecondary>
+      </StyledFooterNav>
+    </StyledFooter>
   );
 };
 export default Footer;

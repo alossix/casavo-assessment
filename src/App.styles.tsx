@@ -1,15 +1,14 @@
 import styled from "styled-components";
 
-export const StyledSection = styled.section`
+export const StyledSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* padding: 0 5%; */
   height: 100vh;
   width: 100%;
 `;
 
-export const StyledInnerContainer = styled.div`
+export const StyledInnerContainer = styled.section`
   display: flex;
   flex-direction: column;
   padding: 1.75rem 5% 3rem 5%;

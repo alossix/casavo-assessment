@@ -9,6 +9,7 @@ export const StyledDisplayContainer = styled.div`
   border-radius: 0.25rem;
   padding: 3rem 0 3.25rem 0;
   position: relative;
+  cursor: pointer;
 `;
 
 export const StyledDisplayContainerTitle = styled.span`
@@ -85,6 +86,7 @@ export const StyledCheckButton = styled.button<{ checked: boolean }>`
   border-radius: 100%;
   animation-name: checkboxUnchecked;
   animation-duration: 0.25s;
+  cursor: pointer;
 
   ${({ checked }) =>
     checked &&

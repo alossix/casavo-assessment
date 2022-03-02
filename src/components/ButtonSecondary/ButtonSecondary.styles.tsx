@@ -14,6 +14,7 @@ export const StyledButtonSecondary = styled.button`
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
+  position: relative;
 
   &:hover {
     background-color: ${theme.colors.goldHover};
@@ -23,5 +24,17 @@ export const StyledButtonSecondary = styled.button`
     position: absolute;
     right: 1rem;
     bottom: 1rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    justify-content: flex-start;
+    padding-left: 2rem;
+    width: 12.125rem;
+    height: 3.5rem;
+    border-radius: 2rem;
+
+    & svg {
+      bottom: 1.15rem;
+    }
   }
 `;
