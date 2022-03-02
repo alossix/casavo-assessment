@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 import {
   StyledStepContainer,
   StyledStepMenuHeader,
@@ -9,19 +11,24 @@ type IStepMenuProps = {
 };
 
 const StepMenu = ({ step }: IStepMenuProps) => {
+  const selectedCar = useSelector(
+    (state: RootState) => state.builder.selectedCar
+  );
+  const disabled = selectedCar.id === 0;
+
   return (
     <StyledStepMenuHeader>
       <StyledStepContainer highlighted={step === 1}>
         <StyledStepTitle>Models</StyledStepTitle>
       </StyledStepContainer>
       <StyledStepContainer highlighted={step === 2}>
-        <StyledStepTitle>Colors</StyledStepTitle>
+        <StyledStepTitle disabled={disabled}>Colors</StyledStepTitle>
       </StyledStepContainer>
       <StyledStepContainer highlighted={step === 3}>
-        <StyledStepTitle>Accessories</StyledStepTitle>
+        <StyledStepTitle disabled={disabled}>Accessories</StyledStepTitle>
       </StyledStepContainer>
       <StyledStepContainer highlighted={step === 4}>
-        <StyledStepTitle>Summary</StyledStepTitle>
+        <StyledStepTitle disabled={disabled}>Summary</StyledStepTitle>
       </StyledStepContainer>
     </StyledStepMenuHeader>
   );

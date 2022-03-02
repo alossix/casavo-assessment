@@ -1,20 +1,22 @@
 import styled from "styled-components";
 import theme from "../../theme";
 
-export const StyledButtonSecondary = styled.button`
+export const StyledButtonSecondary = styled.button<{ disabled?: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 3.375rem;
   color: white;
-  background-color: ${theme.colors.gold};
   border: none;
   font-size: 0.875rem;
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
   position: relative;
+  background-color: ${({ disabled }) =>
+    disabled ? theme.colors.disabled : theme.colors.gold};
+  transition: 0.3s ease;
 
   &:hover {
     background-color: ${theme.colors.goldHover};

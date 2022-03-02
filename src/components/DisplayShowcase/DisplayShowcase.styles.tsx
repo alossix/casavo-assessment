@@ -87,14 +87,14 @@ export const StyledCheckButton = styled.button<{ checked: boolean }>`
   height: 1.9rem;
   border-radius: 100%;
   animation-name: checkboxUnchecked;
-  animation-duration: 0.25s;
+  animation-duration: 0.3s;
   cursor: pointer;
 
   ${({ checked }) =>
     checked &&
     `
       animation-name: checkbox;
-      animation-duration: 0.35s;
+      animation-duration: 0.3s;
       width: 2.75rem;
       height: 2.75rem;
       background-color: ${theme.colors.gold};

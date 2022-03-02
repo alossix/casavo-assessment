@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { selectCar } from "../../redux/builder";

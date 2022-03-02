@@ -21,13 +21,15 @@ export const StyledStepContainer = styled.div<{ highlighted: boolean }>`
     `};
 `;
 
-export const StyledStepTitle = styled.h3`
+export const StyledStepTitle = styled.h3<{ disabled?: boolean }>`
   font-size: 0.875rem;
   line-height: 0.875rem;
-  color: ${theme.colors.darkGray};
   text-transform: uppercase;
   cursor: pointer;
   letter-spacing: 1.4px;
+  color: ${({ disabled }) =>
+    disabled ? theme.colors.disabled : theme.colors.darkGray};
+  transition: 0.3s ease;
 
   &:hover {
     color: ${theme.colors.gold};
