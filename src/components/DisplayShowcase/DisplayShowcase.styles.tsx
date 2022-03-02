@@ -28,7 +28,7 @@ export const StyledImg = styled.img`
 `;
 
 export const StyledPriceSpan = styled.span`
-  margin-bottom: 2.5rem;
+  margin-bottom: 0.35rem;
   color: ${theme.colors.darkGray};
 `;
 
@@ -51,8 +51,8 @@ export const StyledCheckButton = styled.button<{ checked: boolean }>`
       height: 2.5rem;
     }
     50% {
-      width: 2.9rem;
-      height: 2.9rem;
+      width: 3rem;
+      height: 3rem;
     }
     75% {
       width: 2.7rem;
@@ -62,8 +62,8 @@ export const StyledCheckButton = styled.button<{ checked: boolean }>`
 
   @keyframes checkboxUnchecked {
     0% {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 2.75rem;
+      height: 2.75rem;
     }
     25% {
       width: 2.35rem;
@@ -91,8 +91,8 @@ export const StyledCheckButton = styled.button<{ checked: boolean }>`
     `
       animation-name: checkbox;
       animation-duration: 0.35s;
-      width: 2.6rem;
-      height: 2.6rem;
+      width: 2.75rem;
+      height: 2.75rem;
       background-color: ${theme.colors.gold};
       border: 2px solid ${theme.colors.gold};
   `};

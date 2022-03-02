@@ -8,7 +8,7 @@ const Checkmark = ({ className }: HTMLAttributes<HTMLElement>): JSX.Element => (
     y="0px"
     width="44px"
     height="44px"
-    viewBox="8 4 44 44"
+    viewBox="8 3 44 44"
   >
     <g transform="translate(10, 10)">
       <polyline

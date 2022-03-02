@@ -4,6 +4,7 @@ const theme = {
     darkGray: "#5d7c89",
     darkGrayHover: "#678a98",
     gold: "#ffb500",
+    goldHover: "#ffbc1a",
     lightGray: "#ededed",
     white: "#fff",
   },

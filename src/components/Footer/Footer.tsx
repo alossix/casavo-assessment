@@ -1,6 +1,11 @@
+import ButtonSecondary from "../ButtonSecondary";
 import { StyledFooterNav } from "./Footer.styles";
 
 const Footer = () => {
-  return <StyledFooterNav>Footer</StyledFooterNav>;
+  return (
+    <StyledFooterNav>
+      <ButtonSecondary>Colors</ButtonSecondary>
+    </StyledFooterNav>
+  );
 };
 export default Footer;
