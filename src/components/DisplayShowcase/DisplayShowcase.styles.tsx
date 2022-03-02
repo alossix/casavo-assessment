@@ -1,15 +1,17 @@
 import styled from "styled-components";
 import theme from "../../theme";
 
-export const StyledDisplayContainer = styled.div`
+export const StyledDisplayContainer = styled.div<{ checked: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid ${theme.colors.lightGray};
   border-radius: 0.25rem;
-  padding: 3rem 0 3.25rem 0;
+  padding: 3rem 0 2.25rem 0;
   position: relative;
   cursor: pointer;
+  border: 2px solid
+    ${({ checked }) => (checked ? theme.colors.gold : theme.colors.lightGray)};
+  transition: 0.5s ease;
 `;
 
 export const StyledDisplayContainerTitle = styled.span`

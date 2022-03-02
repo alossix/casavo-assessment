@@ -28,15 +28,15 @@ const displayPriceString = (price: number) => {
 const DisplayShowcase = ({ h1Text, img, price }: IDisplayShowcaseProps) => {
   const [checked, setChecked] = useState(false);
   return (
-    <StyledDisplayContainer>
+    <StyledDisplayContainer
+      checked={checked}
+      onClick={() => setChecked(!checked)}
+    >
       <StyledDisplayContainerTitle>{h1Text}</StyledDisplayContainerTitle>
       <StyledImg src={img} />
       <StyledPriceSpan>from {displayPriceString(price)}</StyledPriceSpan>
       <StyledCheckButtonContainer>
-        <StyledCheckButton
-          onClick={() => setChecked(!checked)}
-          checked={checked}
-        >
+        <StyledCheckButton checked={checked}>
           {checked && <Checkmark />}
         </StyledCheckButton>
       </StyledCheckButtonContainer>
