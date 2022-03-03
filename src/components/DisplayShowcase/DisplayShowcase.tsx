@@ -27,10 +27,8 @@ const displayPriceString = (price: number) => {
 };
 
 const DisplayShowcase = ({ car }: IDisplayShowcaseProps) => {
-  const { id, title, price, options } = car;
-  const { selectedCar, colorSelected } = useSelector(
-    (state: RootState) => state.builder
-  );
+  const { id, title, price } = car;
+  const { selectedCar } = useSelector((state: RootState) => state.builder);
   const dispatch = useDispatch();
 
   return (
@@ -44,9 +42,7 @@ const DisplayShowcase = ({ car }: IDisplayShowcaseProps) => {
       }}
     >
       <StyledDisplayContainerTitle>{title}</StyledDisplayContainerTitle>
-      <StyledImg
-        src={colorSelected ? selectedCar.options[0].img : options[0].img}
-      />
+      <StyledImg src={car.options[0].img} />
       <StyledPriceSpan>from {displayPriceString(price)}</StyledPriceSpan>
       <StyledCheckButtonContainer>
         <StyledCheckButton checked={selectedCar.id === id}>

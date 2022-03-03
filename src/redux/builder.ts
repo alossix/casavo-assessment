@@ -1,11 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { ICarProps } from "../App";
+import { ICarProps, IOptionsProps } from "../App";
 
 type IBuilderState = {
   alertSet: boolean;
   selectedCar: ICarProps;
   step: number;
-  colorSelected: boolean;
+  colorSelected: number;
 };
 
 const initialState: IBuilderState = {
@@ -16,6 +16,7 @@ const initialState: IBuilderState = {
     price: 0,
     options: [
       {
+        id: 0,
         title: "",
         img: "",
         colorCode: "",
@@ -24,7 +25,7 @@ const initialState: IBuilderState = {
     ],
   },
   step: 1,
-  colorSelected: false,
+  colorSelected: 1,
 };
 
 export const builderSlice = createSlice({
@@ -37,11 +38,15 @@ export const builderSlice = createSlice({
     selectCar: (state, action: PayloadAction<ICarProps>) => {
       state.selectedCar = action.payload;
     },
+    selectCarOption: (state, action: PayloadAction<IOptionsProps>) => {
+      state.selectedCar.options.pop();
+      state.selectedCar.options.push(action.payload);
+    },
     selectCarReset: () => initialState,
     setStep: (state, action: PayloadAction<number>) => {
       state.step = action.payload;
     },
-    setColorSelected: (state, action: PayloadAction<boolean>) => {
+    setColorSelected: (state, action: PayloadAction<number>) => {
       state.colorSelected = action.payload;
     },
   },
@@ -52,6 +57,7 @@ export const {
   setAlert,
   selectCar,
   selectCarReset,
+  selectCarOption,
   setStep,
   setColorSelected,
 } = builderSlice.actions;
