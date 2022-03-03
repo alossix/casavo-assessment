@@ -25,7 +25,7 @@ const Main = ({ cars }: IMainProps) => {
           ))}
         </StyledDisplayShowcaseContainer>
       )}
-      {step === 2 && <ColorSelector cars={cars} />}
+      {step === 2 && <ColorSelector />}
       {step === 3 && <AccessoriesSelector />}
       {step === 4 && <Summary />}
     </StyledMainContainer>

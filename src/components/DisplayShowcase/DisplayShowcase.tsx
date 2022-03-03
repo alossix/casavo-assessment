@@ -31,15 +31,20 @@ const DisplayShowcase = ({ car }: IDisplayShowcaseProps) => {
   const { selectedCar } = useSelector((state: RootState) => state.builder);
   const dispatch = useDispatch();
 
+  const carSelectHandler = (id: number) => {
+    if (selectedCar.id === id) {
+      dispatch(selectCarReset());
+    } else {
+      dispatch(selectCarReset());
+      dispatch(selectCar(car));
+    }
+    dispatch(setAlert(false));
+  };
+
   return (
     <StyledDisplayContainer
       checked={selectedCar.id === id}
-      onClick={() => {
-        selectedCar.id === id
-          ? dispatch(selectCarReset())
-          : dispatch(selectCar(car));
-        dispatch(setAlert(false));
-      }}
+      onClick={() => carSelectHandler(id)}
     >
       <StyledDisplayContainerTitle>{title}</StyledDisplayContainerTitle>
       <StyledImg src={car.options[0].img} />

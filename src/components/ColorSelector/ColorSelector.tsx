@@ -7,28 +7,26 @@ import {
   StyledColorButtonContainer,
   StyledColorButton,
 } from "./ColorSelector.styles";
-import { ICarProps, IOptionsProps } from "../../App";
+import { IOptionsProps } from "../../App";
 
-type IColorSelectorProps = {
-  cars: ICarProps[];
-};
-
-const ColorSelector = ({ cars }: IColorSelectorProps) => {
+const ColorSelector = () => {
   const { selectedCar, colorSelected } = useSelector(
     (state: RootState) => state.builder
   );
   const dispatch = useDispatch();
 
+  const [displaySrc] = selectedCar.options.filter(
+    (option) => option.id === colorSelected
+  );
+
   const handleColorSelect = (option: IOptionsProps) => {
     dispatch(setColorSelected(option.id));
   };
+
   return (
     <StyledColorSelectorContainer>
       <StyledColorSelectorImgContainer>
-        <img
-          src={selectedCar.options[0].img}
-          alt={selectedCar.options[0].title}
-        />
+        <img src={displaySrc.img} alt={displaySrc.title} />
       </StyledColorSelectorImgContainer>
       <StyledColorButtonContainer>
         {selectedCar.options.map((option) => (
