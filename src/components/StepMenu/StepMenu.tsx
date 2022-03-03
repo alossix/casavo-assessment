@@ -45,7 +45,7 @@ const StepMenu = () => {
         <StyledStepTitle disabled={disabled}>Accessories</StyledStepTitle>
       </StyledStepContainer>
       <StyledStepContainer
-        onClick={() => handleStepMenuClick(3)}
+        onClick={() => handleStepMenuClick(4)}
         highlighted={step === 4}
       >
         <StyledStepTitle disabled={disabled}>Summary</StyledStepTitle>
