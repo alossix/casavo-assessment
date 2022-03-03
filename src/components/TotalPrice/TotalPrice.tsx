@@ -16,7 +16,8 @@ const TotalPrice = () => {
   const [displaySrc] = selectedCar.options.filter(
     (option) => option.id === colorSelected
   );
-  console.log(displaySrc);
+
+  const displayPrice = totalPrice + displaySrc?.price;
 
   return (
     <StyledTotalPriceOuterContainer>
@@ -28,7 +29,7 @@ const TotalPrice = () => {
       <StyledTotalPriceContainer>
         <StyledTotalTitle>Total</StyledTotalTitle>
         <StyledTotalPrice>
-          {totalPrice
+          {displayPrice
             .toLocaleString("en-US", {
               style: "currency",
               currency: "USD",

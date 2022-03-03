@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { setColorSelected, setTotalPrice } from "../../redux/builder";
+import { setColorSelected } from "../../redux/builder";
 import {
   StyledColorSelectorContainer,
   StyledColorSelectorImgContainer,
@@ -10,7 +10,7 @@ import {
 import { IOptionsProps } from "../../App";
 
 const ColorSelector = () => {
-  const { selectedCar, colorSelected, totalPrice } = useSelector(
+  const { selectedCar, colorSelected } = useSelector(
     (state: RootState) => state.builder
   );
   const dispatch = useDispatch();
@@ -21,7 +21,6 @@ const ColorSelector = () => {
 
   const handleColorSelect = (option: IOptionsProps) => {
     dispatch(setColorSelected(option.id));
-    dispatch(setTotalPrice(totalPrice + option.price));
   };
 
   return (

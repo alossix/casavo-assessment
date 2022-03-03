@@ -12,7 +12,8 @@ export const StyledColorSelectorImgContainer = styled.div`
   margin: 2.5rem 0 4.5rem 0;
 
   & img {
-    max-width: 100%;
+    width: 100%;
+    max-width: 750px;
   }
 `;
 
