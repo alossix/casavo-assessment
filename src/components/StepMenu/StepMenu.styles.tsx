@@ -32,6 +32,8 @@ export const StyledStepTitle = styled.h3<{ disabled?: boolean }>`
   transition: 0.3s ease;
 
   &:hover {
-    color: ${theme.colors.gold};
+    /* color: ${theme.colors.gold}; */
+    color: ${({ disabled }) =>
+      disabled ? theme.colors.disabled : theme.colors.gold};
   }
 `;

@@ -1,33 +1,53 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
+import { setStep } from "../../redux/builder";
 import {
   StyledStepContainer,
   StyledStepMenuHeader,
   StyledStepTitle,
 } from "./StepMenu.styles";
 
-type IStepMenuProps = {
-  step: number;
-};
-
-const StepMenu = ({ step }: IStepMenuProps) => {
-  const selectedCar = useSelector(
-    (state: RootState) => state.builder.selectedCar
+const StepMenu = () => {
+  const { selectedCar, step } = useSelector(
+    (state: RootState) => state.builder
   );
+  const dispatch = useDispatch();
+
   const disabled = selectedCar.id === 0;
+
+  const handleStepMenuClick = (stepNum: number) => {
+    if (disabled) {
+      console.log(`click, no model chosen`);
+    } else {
+      dispatch(setStep(stepNum));
+      console.log(`click, new step`);
+    }
+  };
 
   return (
     <StyledStepMenuHeader>
-      <StyledStepContainer highlighted={step === 1}>
+      <StyledStepContainer
+        onClick={() => handleStepMenuClick(1)}
+        highlighted={step === 1}
+      >
         <StyledStepTitle>Models</StyledStepTitle>
       </StyledStepContainer>
-      <StyledStepContainer highlighted={step === 2}>
+      <StyledStepContainer
+        onClick={() => handleStepMenuClick(2)}
+        highlighted={step === 2}
+      >
         <StyledStepTitle disabled={disabled}>Colors</StyledStepTitle>
       </StyledStepContainer>
-      <StyledStepContainer highlighted={step === 3}>
+      <StyledStepContainer
+        onClick={() => handleStepMenuClick(3)}
+        highlighted={step === 3}
+      >
         <StyledStepTitle disabled={disabled}>Accessories</StyledStepTitle>
       </StyledStepContainer>
-      <StyledStepContainer highlighted={step === 4}>
+      <StyledStepContainer
+        onClick={() => handleStepMenuClick(3)}
+        highlighted={step === 4}
+      >
         <StyledStepTitle disabled={disabled}>Summary</StyledStepTitle>
       </StyledStepContainer>
     </StyledStepMenuHeader>

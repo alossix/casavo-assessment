@@ -9,6 +9,7 @@ type ICarState = {
 
 type IBuilderState = {
   selectedCar: ICarState;
+  step: number;
 };
 
 const initialState: IBuilderState = {
@@ -18,6 +19,7 @@ const initialState: IBuilderState = {
     img: "",
     price: 0,
   },
+  step: 1,
 };
 
 export const builderSlice = createSlice({
@@ -27,10 +29,13 @@ export const builderSlice = createSlice({
     selectCar: (state, action: PayloadAction<ICarState>) => {
       state.selectedCar = action.payload;
     },
+    setStep: (state, action: PayloadAction<number>) => {
+      state.step = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { selectCar } = builderSlice.actions;
+export const { selectCar, setStep } = builderSlice.actions;
 
 export default builderSlice.reducer;

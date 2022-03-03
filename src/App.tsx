@@ -27,7 +27,7 @@ const App = () => {
       <GlobalStyles />
       <StyledSection>
         <StyledInnerContainer>
-          <Header step={1} />
+          <Header />
           <Main cars={cars} />
         </StyledInnerContainer>
         <Footer />

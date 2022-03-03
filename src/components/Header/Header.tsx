@@ -1,3 +1,5 @@
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 import useWindowSize from "../../hooks/useWindowSize";
 import ButtonPrimary from "../ButtonPrimary";
 import {
@@ -10,11 +12,8 @@ import {
 } from "./Header.styles";
 import StepMenu from "../StepMenu";
 
-type IHeaderProps = {
-  step: number;
-};
-
-const Header = ({ step }: IHeaderProps) => {
+const Header = () => {
+  const { step } = useSelector((state: RootState) => state.builder);
   const size = useWindowSize({ width: 0, height: 0 });
   return (
     <>
@@ -34,7 +33,7 @@ const Header = ({ step }: IHeaderProps) => {
               <ButtonPrimary>Article & Download</ButtonPrimary>
               <StyledDesktopH1>Product Builder</StyledDesktopH1>
             </StyledDesktopInnerContainer>
-            <StepMenu step={step} />
+            <StepMenu />
           </>
         )}
       </StyledHeaderContainer>
