@@ -30,7 +30,6 @@ export const StyledButtonsContainer = styled.div`
   align-items: center;
   height: 100%;
   width: 100%;
-  box-shadow: 0 0 40px rgb(0 0 0 / 20%);
 
   @media screen and (min-width: 1024px) {
     box-shadow: none;

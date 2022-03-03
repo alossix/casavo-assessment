@@ -25,13 +25,18 @@ const Footer = () => {
         <StyledFooterNav>
           <TotalPrice />
           {width < 1024 && selectedCar.id === 0 && null}
-          {(width < 1024 && selectedCar.id !== 0) ||
-            (width >= 1024 && (
-              <StyledButtonsContainer>
-                {step > 1 && <ButtonBack />}
-                <ButtonSecondary />
-              </StyledButtonsContainer>
-            ))}
+          {width < 1024 && selectedCar.id !== 0 && (
+            <StyledButtonsContainer>
+              {step > 1 && <ButtonBack />}
+              <ButtonSecondary />
+            </StyledButtonsContainer>
+          )}
+          {width >= 1024 && (
+            <StyledButtonsContainer>
+              {step > 1 && <ButtonBack />}
+              <ButtonSecondary />
+            </StyledButtonsContainer>
+          )}
         </StyledFooterNav>
       </StyledFooter>
     </>

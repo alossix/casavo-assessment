@@ -4,11 +4,27 @@ import theme from "../../theme";
 export const StyledButtonSecondary = styled.button<{
   disabledColor?: boolean;
 }>`
+  @keyframes slider {
+    0% {
+      transform: translateY(100px);
+    }
+    25% {
+      transform: translateY(75px);
+    }
+    50% {
+      transform: translateY(50px);
+    }
+    75% {
+      transform: translateY(25px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
   display: flex;
   justify-content: center;
   align-items: center;
   flex: 1 1 50%;
-
   height: 100%;
   color: white;
   border: none;
@@ -19,7 +35,10 @@ export const StyledButtonSecondary = styled.button<{
   position: relative;
   background-color: ${({ disabledColor }) =>
     disabledColor ? theme.colors.disabled : theme.colors.gold};
+  box-shadow: 0 0 25px rgb(0 0 0 / 20%);
   transition: 0.3s ease;
+  animation-name: slider;
+  animation-duration: 0.2s;
 
   &:hover {
     background-color: ${({ disabledColor }) =>
