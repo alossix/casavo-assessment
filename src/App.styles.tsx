@@ -11,9 +11,4 @@ export const StyledInnerContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-
-  @media screen and (min-width: 1024px) {
-    padding-top: 0;
-    max-width: 75rem;
-  }
 `;
