@@ -17,6 +17,23 @@ export const StyledAlertBoxContainer = styled.div`
 `;
 
 export const StyledAlertBox = styled.div`
+  @keyframes slider {
+    0% {
+      transform: translateY(100px);
+    }
+    25% {
+      transform: translateY(75px);
+    }
+    50% {
+      transform: translateY(50px);
+    }
+    75% {
+      transform: translateY(25px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
   background-color: ${theme.colors.black};
   color: white;
   padding: 0.8rem 1rem;
@@ -24,4 +41,6 @@ export const StyledAlertBox = styled.div`
   height: fit-content;
   white-space: nowrap;
   border-radius: 0.25rem;
+  animation-name: slider;
+  animation-duration: 0.2s;
 `;
