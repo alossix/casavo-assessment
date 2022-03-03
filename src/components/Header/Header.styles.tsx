@@ -3,8 +3,12 @@ import styled from "styled-components";
 export const StyledHeaderContainer = styled.header`
   display: flex;
   flex-direction: column;
-  width: 100%;
   line-height: 1.5rem;
+  padding: 1.75rem 5% 0 5%;
+
+  @media screen and (min-width: 1024px) {
+    padding: 0;
+  }
 `;
 
 export const StyledMobileInnerContainer = styled.div`
@@ -19,13 +23,17 @@ export const StyledMobileInnerContainer = styled.div`
 `;
 
 export const StyledDesktopInnerContainer = styled.div`
-  display: flex;
-  justify-content: center;
+  display: none;
 
-  & button {
-    position: absolute;
-    left: 2rem;
-    top: 2.5rem;
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: center;
+
+    & button {
+      position: absolute;
+      left: 2rem;
+      top: 2.5rem;
+    }
   }
 `;
 
@@ -46,6 +54,7 @@ export const StyledDesktopH1 = styled.h1`
   margin: 2.6rem 0 1.8rem 0;
 
   @media screen and (min-width: 1481px) {
+    line-height: 3rem;
     font-size: 3rem;
     margin: 3.3rem 0 2.3rem 0;
   }

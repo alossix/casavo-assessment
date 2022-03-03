@@ -14,20 +14,25 @@ import StepMenu from "../StepMenu";
 
 const Header = () => {
   const { step } = useSelector((state: RootState) => state.builder);
-  const size = useWindowSize({ width: 0, height: 0 });
+  const { width } = useWindowSize();
   return (
     <>
       <StyledHeaderContainer>
-        {size.width < 1024 && (
+        {width < 1024 && (
           <>
             <StyledMobileInnerContainer>
-              <StyledMobileH1>Select Model</StyledMobileH1>
+              <StyledMobileH1>
+                {step === 1 && "Select Model"}
+                {step === 2 && "Select Color"}
+                {step === 3 && "Accessories"}
+                {step === 4 && "Summary"}
+              </StyledMobileH1>
               <StyledStepText>Step {step} of 4</StyledStepText>
             </StyledMobileInnerContainer>
-            <ButtonPrimary>Article & Download</ButtonPrimary>
+            {step === 1 && <ButtonPrimary>Article & Download</ButtonPrimary>}
           </>
         )}
-        {size.width >= 1024 && (
+        {width >= 1024 && (
           <>
             <StyledDesktopInnerContainer>
               <ButtonPrimary>Article & Download</ButtonPrimary>

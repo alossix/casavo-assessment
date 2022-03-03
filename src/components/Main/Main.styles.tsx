@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 export const StyledMainContainer = styled.main`
   display: flex;
+  padding: 1rem 5%;
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 5%;
+  }
 `;
 
 export const StyledDisplayShowcaseContainer = styled.div`

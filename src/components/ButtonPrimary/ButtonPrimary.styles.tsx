@@ -11,7 +11,6 @@ export const StyledButtonPrimary = styled.button`
   width: 100%;
   background-color: ${theme.colors.darkGray};
   color: ${theme.colors.white};
-  margin-bottom: 1rem;
   cursor: pointer;
 
   &:hover {

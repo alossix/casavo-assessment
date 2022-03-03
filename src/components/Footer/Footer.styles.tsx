@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 export const StyledFooter = styled.footer`
   display: flex;
-  width: 100%;
+  height: 3.375rem;
+  width: 100vw;
   position: fixed;
   bottom: 0;
-  height: 3.375rem;
 
   @media screen and (min-width: 1024px) {
     height: 7.5rem;

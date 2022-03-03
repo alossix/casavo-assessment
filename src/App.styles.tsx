@@ -1,17 +1,16 @@
 import styled from "styled-components";
 
-export const StyledSection = styled.div`
+export const StyledOuterContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  width: 100%;
+  max-width: 100vw;
 `;
 
-export const StyledInnerContainer = styled.section`
+export const StyledInnerContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 1.75rem 5% 3rem 5%;
+  width: 100%;
 
   @media screen and (min-width: 1024px) {
     padding-top: 0;

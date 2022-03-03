@@ -4,7 +4,7 @@ import GlobalStyles from "./GlobalStyles";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
-import { StyledInnerContainer, StyledSection } from "./App.styles";
+import { StyledOuterContainer, StyledInnerContainer } from "./App.styles";
 
 const cars = [
   {
@@ -25,13 +25,13 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyles />
-      <StyledSection>
+      <StyledOuterContainer>
         <StyledInnerContainer>
           <Header />
           <Main cars={cars} />
         </StyledInnerContainer>
         <Footer />
-      </StyledSection>
+      </StyledOuterContainer>
     </ThemeProvider>
   );
 };
