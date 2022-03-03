@@ -6,6 +6,7 @@ type IBuilderState = {
   selectedCar: ICarProps;
   step: number;
   colorSelected: number;
+  totalPrice: number;
 };
 
 const initialState: IBuilderState = {
@@ -26,6 +27,7 @@ const initialState: IBuilderState = {
   },
   step: 1,
   colorSelected: 1,
+  totalPrice: 0,
 };
 
 export const builderSlice = createSlice({
@@ -49,6 +51,9 @@ export const builderSlice = createSlice({
     setColorSelected: (state, action: PayloadAction<number>) => {
       state.colorSelected = action.payload;
     },
+    setTotalPrice: (state, action: PayloadAction<number>) => {
+      state.totalPrice = action.payload;
+    },
   },
 });
 
@@ -60,6 +65,7 @@ export const {
   selectCarOption,
   setStep,
   setColorSelected,
+  setTotalPrice,
 } = builderSlice.actions;
 
 export default builderSlice.reducer;

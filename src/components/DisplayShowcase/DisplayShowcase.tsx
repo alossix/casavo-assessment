@@ -1,6 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { setAlert, selectCar, selectCarReset } from "../../redux/builder";
+import {
+  setAlert,
+  selectCar,
+  selectCarReset,
+  setTotalPrice,
+} from "../../redux/builder";
 import {
   StyledCheckButtonContainer,
   StyledCheckButton,
@@ -34,9 +39,11 @@ const DisplayShowcase = ({ car }: IDisplayShowcaseProps) => {
   const carSelectHandler = (id: number) => {
     if (selectedCar.id === id) {
       dispatch(selectCarReset());
+      dispatch(setTotalPrice(0));
     } else {
       dispatch(selectCarReset());
       dispatch(selectCar(car));
+      dispatch(setTotalPrice(car.price));
     }
     dispatch(setAlert(false));
   };
