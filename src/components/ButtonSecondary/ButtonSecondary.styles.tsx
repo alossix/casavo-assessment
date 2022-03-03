@@ -7,8 +7,9 @@ export const StyledButtonSecondary = styled.button<{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 3.375rem;
+  flex: 1 1 50%;
+
+  height: 100%;
   color: white;
   border: none;
   font-size: 0.875rem;
@@ -26,20 +27,18 @@ export const StyledButtonSecondary = styled.button<{
   }
 
   & svg {
+    height: 100%;
     position: absolute;
+    bottom: 0.5rem;
     right: 1rem;
-    bottom: 1rem;
   }
 
   @media screen and (min-width: 1024px) {
     justify-content: flex-start;
+    flex: none;
     padding-left: 2rem;
     width: 12.125rem;
     height: 3.5rem;
     border-radius: 2rem;
-
-    & svg {
-      bottom: 1.15rem;
-    }
   }
 `;

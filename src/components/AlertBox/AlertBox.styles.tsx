@@ -2,14 +2,18 @@ import styled from "styled-components";
 import theme from "../../theme";
 
 export const StyledAlertBoxContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  width: 100%;
-  height: 7.5rem;
-  position: fixed;
-  bottom: 0;
+  display: none;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    width: 100%;
+    height: 7.5rem;
+    position: fixed;
+    bottom: 0;
+  }
 `;
 
 export const StyledAlertBox = styled.div`

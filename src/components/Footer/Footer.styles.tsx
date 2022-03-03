@@ -5,7 +5,6 @@ export const StyledFooter = styled.footer`
   width: 100%;
   position: fixed;
   bottom: 0;
-  box-shadow: 0 0 25px rgb(0 0 0 / 20%);
   height: 3.375rem;
 
   @media screen and (min-width: 1024px) {
@@ -29,6 +28,13 @@ export const StyledFooterNav = styled.nav`
 export const StyledButtonsContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
   height: 100%;
+  width: 100%;
+  box-shadow: 0 0 40px rgb(0 0 0 / 20%);
+
+  @media screen and (min-width: 1024px) {
+    box-shadow: none;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
 `;

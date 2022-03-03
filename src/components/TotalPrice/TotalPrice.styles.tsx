@@ -2,9 +2,13 @@ import styled from "styled-components";
 import theme from "../../theme";
 
 export const StyledTotalPriceOuterContainer = styled.div`
-  display: flex;
-  align-items: center;
-  height: 100%;
+  display: none;
+
+  @media screen and (min-width: 1024px) {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
 `;
 
 export const StyledSelectedCarImageContainer = styled.div<{
