@@ -14,7 +14,7 @@ export const StyledTotalPriceOuterContainer = styled.div`
 export const StyledSelectedCarImageContainer = styled.div<{
   active: boolean;
 }>`
-  @keyframes slider {
+  @keyframes sliderCar {
     0% {
       display: flex;
       width: 0;
@@ -74,7 +74,7 @@ export const StyledSelectedCarImageContainer = styled.div<{
       display: flex;
       padding-right: 1.7rem;
       margin-right: 1.7rem;
-      animation-name: slider;
+      animation-name: sliderCar;
       animation-duration: 0.2s;
   `}
 `;

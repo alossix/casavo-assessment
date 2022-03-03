@@ -17,7 +17,7 @@ export const StyledAlertBoxContainer = styled.div`
 `;
 
 export const StyledAlertBox = styled.div`
-  @keyframes slider {
+  @keyframes sliderAlert {
     0% {
       transform: translateY(100px);
     }
@@ -41,6 +41,6 @@ export const StyledAlertBox = styled.div`
   height: fit-content;
   white-space: nowrap;
   border-radius: 0.25rem;
-  animation-name: slider;
+  animation-name: sliderAlert;
   animation-duration: 0.2s;
 `;
