@@ -24,3 +24,10 @@ export const StyledFooterNav = styled.nav`
     padding: 0 2rem;
   }
 `;
+
+export const StyledButtonsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 100%;
+`;

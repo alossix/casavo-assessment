@@ -1,18 +1,25 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
+import {
+  StyledFooter,
+  StyledFooterNav,
+  StyledButtonsContainer,
+} from "./Footer.styles";
 import ButtonSecondary from "../ButtonSecondary";
 import TotalPrice from "../TotalPrice";
-import { StyledFooter, StyledFooterNav } from "./Footer.styles";
+import ButtonBack from "../ButtonBack";
 
 const Footer = () => {
-  const selectedCar = useSelector(
-    (state: RootState) => state.builder.selectedCar
-  );
+  const { step } = useSelector((state: RootState) => state.builder);
+
   return (
     <StyledFooter>
       <StyledFooterNav>
         <TotalPrice />
-        <ButtonSecondary>Colors</ButtonSecondary>
+        <StyledButtonsContainer>
+          {step > 1 && <ButtonBack />}
+          <ButtonSecondary />
+        </StyledButtonsContainer>
       </StyledFooterNav>
     </StyledFooter>
   );

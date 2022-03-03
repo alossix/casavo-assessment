@@ -8,6 +8,7 @@ const theme = {
     goldHover: "#ffbc1a",
     lightGray: "#ededed",
     lightGrayAlt: "#e1e1e1",
+    lightGrayHover: "#f2f2f2",
     white: "#fff",
   },
 };

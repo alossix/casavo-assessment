@@ -1,4 +1,4 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import {
   StyledDisplayShowcaseContainer,
@@ -19,10 +19,7 @@ type IMainProps = {
 };
 
 const Main = ({ cars }: IMainProps) => {
-  const { selectedCar, step } = useSelector(
-    (state: RootState) => state.builder
-  );
-  const dispatch = useDispatch();
+  const { step } = useSelector((state: RootState) => state.builder);
   return (
     <StyledMainContainer>
       {step === 1 && (

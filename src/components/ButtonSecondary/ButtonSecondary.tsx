@@ -1,20 +1,29 @@
-import { ReactNode } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
+import { setStep } from "../../redux/builder";
 import Arrow from "../../icons/Arrow";
 import { StyledButtonSecondary } from "./ButtonSecondary.styles";
 
-type IButtonSecondaryProps = {
-  children: ReactNode;
-};
-
-const ButtonSecondary = ({ children }: IButtonSecondaryProps) => {
-  const selectedCar = useSelector(
-    (state: RootState) => state.builder.selectedCar
+const ButtonSecondary = (): JSX.Element => {
+  const { selectedCar, step } = useSelector(
+    (state: RootState) => state.builder
   );
+  const dispatch = useDispatch();
+
+  const handleButtonSecondaryClick = () => {
+    if (step <= 3) {
+      dispatch(setStep(step + 1));
+    }
+  };
   return (
-    <StyledButtonSecondary disabled={selectedCar.id === 0}>
-      {children}
+    <StyledButtonSecondary
+      onClick={() => handleButtonSecondaryClick()}
+      disabled={selectedCar.id === 0}
+    >
+      {step === 1 && "Colors"}
+      {step === 2 && "Accessories"}
+      {step === 3 && "Summary"}
+      {step === 4 && "Buy Now"}
       <Arrow />
     </StyledButtonSecondary>
   );

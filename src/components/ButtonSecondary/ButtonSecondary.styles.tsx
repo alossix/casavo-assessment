@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import theme from "../../theme";
 
-export const StyledButtonSecondary = styled.button<{ disabled?: boolean }>`
+export const StyledButtonSecondary = styled.button<{
+  disabled?: boolean;
+  // onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}>`
   display: flex;
   justify-content: center;
   align-items: center;
