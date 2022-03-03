@@ -6,18 +6,62 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import { StyledOuterContainer, StyledInnerContainer } from "./App.styles";
 
-const cars = [
+export type ICarProps = {
+  id: number;
+  title: string;
+  price: number;
+  options: {
+    title: string;
+    img: string;
+    colorCode: string;
+    price: number;
+  }[];
+};
+
+const cars: ICarProps[] = [
   {
     id: 1,
     title: "BMW i3",
-    img: "https://codyhouse.co/demo/product-builder/img/product01_col01.jpg",
     price: 42400,
+    options: [
+      {
+        title: "white",
+        img: "https://codyhouse.co/demo/product-builder/img/product01_col01.jpg",
+        colorCode: "#ffffff",
+        price: 0,
+      },
+      {
+        title: "mineral grey",
+        img: "https://codyhouse.co/demo/product-builder/img/product01_col02.jpg",
+        colorCode: "#303539",
+        price: 550,
+      },
+      {
+        title: "orange metallic",
+        img: "https://codyhouse.co/demo/product-builder/img/product01_col03.jpg",
+        colorCode: "#cf5a16",
+        price: 550,
+      },
+    ],
   },
   {
     id: 2,
     title: "BMW i8",
-    img: "https://codyhouse.co/demo/product-builder/img/product02_col01.jpg",
     price: 140700,
+    options: [
+      {
+        title: "grey metallic",
+        img: "https://codyhouse.co/demo/product-builder/img/product02_col01.jpg",
+        colorCode: "#303539",
+        price: 0,
+      },
+      {
+        title: "white perl metallic",
+        img: "https://codyhouse.co/demo/product-builder/img/product02_col02.jpg",
+        colorCode: "#d1d1d1",
+        price: 1800,
+      },
+    ],
   },
 ];
 

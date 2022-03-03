@@ -26,7 +26,7 @@ export const StyledButtonBack = styled.button`
     transform: rotate(180deg);
     position: absolute;
     top: 0.5rem;
-    left: 1rem;
+    left: 1.15rem;
 
     & g {
       & polygon {

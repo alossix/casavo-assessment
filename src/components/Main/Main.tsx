@@ -4,18 +4,14 @@ import {
   StyledDisplayShowcaseContainer,
   StyledMainContainer,
 } from "./Main.styles";
+import { ICarProps } from "../../App";
 import DisplayShowcase from "../DisplayShowcase";
 import ColorSelector from "../ColorSelector";
 import AccessoriesSelector from "../AccessoriesSelector";
 import Summary from "../Summary";
 
 type IMainProps = {
-  cars: {
-    id: number;
-    title: string;
-    img: string;
-    price: number;
-  }[];
+  cars: ICarProps[];
 };
 
 const Main = ({ cars }: IMainProps) => {
@@ -25,13 +21,7 @@ const Main = ({ cars }: IMainProps) => {
       {step === 1 && (
         <StyledDisplayShowcaseContainer>
           {cars.map((car) => (
-            <DisplayShowcase
-              key={car.id}
-              h1Text={car.title}
-              id={car.id}
-              img={car.img}
-              price={car.price}
-            />
+            <DisplayShowcase key={car.id} car={car} />
           ))}
         </StyledDisplayShowcaseContainer>
       )}

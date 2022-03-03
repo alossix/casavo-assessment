@@ -17,7 +17,7 @@ const TotalPrice = () => {
   return (
     <StyledTotalPriceOuterContainer>
       <StyledSelectedCarImageContainer active={selectedCar.id !== 0}>
-        <img src={selectedCar.img} alt={selectedCar.title} />
+        <img src={selectedCar.options[0].img} alt={selectedCar.title} />
       </StyledSelectedCarImageContainer>
       <StyledTotalPriceContainer>
         <StyledTotalTitle>Total</StyledTotalTitle>

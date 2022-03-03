@@ -1,16 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
-type ICarState = {
-  id: number | undefined;
-  title: string;
-  img: string;
-  price: number;
-};
+import { ICarProps } from "../App";
 
 type IBuilderState = {
   alertSet: boolean;
-  selectedCar: ICarState;
+  selectedCar: ICarProps;
   step: number;
+  colorSelected: boolean;
 };
 
 const initialState: IBuilderState = {
@@ -18,10 +13,18 @@ const initialState: IBuilderState = {
   selectedCar: {
     id: 0,
     title: "",
-    img: "",
     price: 0,
+    options: [
+      {
+        title: "",
+        img: "",
+        colorCode: "",
+        price: 0,
+      },
+    ],
   },
   step: 1,
+  colorSelected: false,
 };
 
 export const builderSlice = createSlice({
@@ -31,16 +34,26 @@ export const builderSlice = createSlice({
     setAlert: (state, action: PayloadAction<boolean>) => {
       state.alertSet = action.payload;
     },
-    selectCar: (state, action: PayloadAction<ICarState>) => {
+    selectCar: (state, action: PayloadAction<ICarProps>) => {
       state.selectedCar = action.payload;
     },
+    selectCarReset: () => initialState,
     setStep: (state, action: PayloadAction<number>) => {
       state.step = action.payload;
+    },
+    setColorSelected: (state, action: PayloadAction<boolean>) => {
+      state.colorSelected = action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setAlert, selectCar, setStep } = builderSlice.actions;
+export const {
+  setAlert,
+  selectCar,
+  selectCarReset,
+  setStep,
+  setColorSelected,
+} = builderSlice.actions;
 
 export default builderSlice.reducer;

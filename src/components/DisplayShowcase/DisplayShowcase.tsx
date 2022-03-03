@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { setAlert, selectCar } from "../../redux/builder";
+import { setAlert, selectCar, selectCarReset } from "../../redux/builder";
 import {
   StyledCheckButtonContainer,
   StyledCheckButton,
@@ -10,12 +10,10 @@ import {
   StyledPriceSpan,
 } from "./DisplayShowcase.styles";
 import Checkmark from "../../icons/Checkmark";
+import { ICarProps } from "../../App";
 
 type IDisplayShowcaseProps = {
-  h1Text: string;
-  id: number;
-  img: string;
-  price: number;
+  car: ICarProps;
 };
 
 const displayPriceString = (price: number) => {
@@ -28,21 +26,27 @@ const displayPriceString = (price: number) => {
     .replace(",", ".");
 };
 
-const DisplayShowcase = ({ h1Text, id, img, price }: IDisplayShowcaseProps) => {
-  const { selectedCar } = useSelector((state: RootState) => state.builder);
+const DisplayShowcase = ({ car }: IDisplayShowcaseProps) => {
+  const { id, title, price, options } = car;
+  const { selectedCar, colorSelected } = useSelector(
+    (state: RootState) => state.builder
+  );
   const dispatch = useDispatch();
+
   return (
     <StyledDisplayContainer
       checked={selectedCar.id === id}
       onClick={() => {
         selectedCar.id === id
-          ? dispatch(selectCar({ id: 0, title: "", img: "", price: 0 }))
-          : dispatch(selectCar({ id, title: h1Text, img, price }));
+          ? dispatch(selectCarReset())
+          : dispatch(selectCar(car));
         dispatch(setAlert(false));
       }}
     >
-      <StyledDisplayContainerTitle>{h1Text}</StyledDisplayContainerTitle>
-      <StyledImg src={img} />
+      <StyledDisplayContainerTitle>{title}</StyledDisplayContainerTitle>
+      <StyledImg
+        src={colorSelected ? selectedCar.options[0].img : options[0].img}
+      />
       <StyledPriceSpan>from {displayPriceString(price)}</StyledPriceSpan>
       <StyledCheckButtonContainer>
         <StyledCheckButton checked={selectedCar.id === id}>
