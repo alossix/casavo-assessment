@@ -19,6 +19,7 @@ export const StyledFooterNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  position: relative;
 
   @media screen and (min-width: 1024px) {
     padding: 0 2rem;

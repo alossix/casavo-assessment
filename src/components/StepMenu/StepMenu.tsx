@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
-import { setStep } from "../../redux/builder";
+import { setAlert, setStep } from "../../redux/builder";
 import {
   StyledStepContainer,
   StyledStepMenuHeader,
@@ -17,10 +17,9 @@ const StepMenu = () => {
 
   const handleStepMenuClick = (stepNum: number) => {
     if (disabled) {
-      console.log(`click, no model chosen`);
+      dispatch(setAlert(true));
     } else {
       dispatch(setStep(stepNum));
-      console.log(`click, new step`);
     }
   };
 

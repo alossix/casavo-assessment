@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { selectCar } from "../../redux/builder";
+import { setAlert, selectCar } from "../../redux/builder";
 import {
   StyledCheckButtonContainer,
   StyledCheckButton,
@@ -29,9 +29,7 @@ const displayPriceString = (price: number) => {
 };
 
 const DisplayShowcase = ({ h1Text, id, img, price }: IDisplayShowcaseProps) => {
-  const selectedCar = useSelector(
-    (state: RootState) => state.builder.selectedCar
-  );
+  const { selectedCar } = useSelector((state: RootState) => state.builder);
   const dispatch = useDispatch();
   return (
     <StyledDisplayContainer
@@ -40,6 +38,7 @@ const DisplayShowcase = ({ h1Text, id, img, price }: IDisplayShowcaseProps) => {
         selectedCar.id === id
           ? dispatch(selectCar({ id: 0, title: "", img: "", price: 0 }))
           : dispatch(selectCar({ id, title: h1Text, img, price }));
+        dispatch(setAlert(false));
       }}
     >
       <StyledDisplayContainerTitle>{h1Text}</StyledDisplayContainerTitle>

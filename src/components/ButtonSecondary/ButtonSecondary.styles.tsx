@@ -2,8 +2,7 @@ import styled from "styled-components";
 import theme from "../../theme";
 
 export const StyledButtonSecondary = styled.button<{
-  disabled?: boolean;
-  // onClick?: React.MouseEventHandler<HTMLButtonElement>;
+  disabledColor?: boolean;
 }>`
   display: flex;
   justify-content: center;
@@ -17,12 +16,13 @@ export const StyledButtonSecondary = styled.button<{
   text-transform: uppercase;
   cursor: pointer;
   position: relative;
-  background-color: ${({ disabled }) =>
-    disabled ? theme.colors.disabled : theme.colors.gold};
+  background-color: ${({ disabledColor }) =>
+    disabledColor ? theme.colors.disabled : theme.colors.gold};
   transition: 0.3s ease;
 
   &:hover {
-    background-color: ${theme.colors.goldHover};
+    background-color: ${({ disabledColor }) =>
+      disabledColor ? theme.colors.disabled : theme.colors.goldHover};
   }
 
   & svg {

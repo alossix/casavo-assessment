@@ -9,7 +9,6 @@ const ButtonBack = () => {
   const dispatch = useDispatch();
 
   const handleButtonSecondaryClick = () => {
-    console.log(`back button click`);
     if (step > 1) {
       dispatch(setStep(step - 1));
     }
