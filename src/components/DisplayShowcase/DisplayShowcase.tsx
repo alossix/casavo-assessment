@@ -1,6 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { setAlert, selectCar } from "../../redux/builder";
+import {
+  setAlert,
+  selectCar,
+  selectCarReset,
+  setTotalPrice,
+} from "../../redux/builder";
 import {
   StyledCheckButtonContainer,
   StyledCheckButton,
@@ -10,12 +15,10 @@ import {
   StyledPriceSpan,
 } from "./DisplayShowcase.styles";
 import Checkmark from "../../icons/Checkmark";
+import { ICarProps } from "../../App";
 
 type IDisplayShowcaseProps = {
-  h1Text: string;
-  id: number;
-  img: string;
-  price: number;
+  car: ICarProps;
 };
 
 const displayPriceString = (price: number) => {
@@ -28,21 +31,30 @@ const displayPriceString = (price: number) => {
     .replace(",", ".");
 };
 
-const DisplayShowcase = ({ h1Text, id, img, price }: IDisplayShowcaseProps) => {
+const DisplayShowcase = ({ car }: IDisplayShowcaseProps) => {
+  const { id, title, price } = car;
   const { selectedCar } = useSelector((state: RootState) => state.builder);
   const dispatch = useDispatch();
+
+  const carSelectHandler = (id: number) => {
+    if (selectedCar.id === id) {
+      dispatch(selectCarReset());
+      dispatch(setTotalPrice(0));
+    } else {
+      dispatch(selectCarReset());
+      dispatch(selectCar(car));
+      dispatch(setTotalPrice(car.price));
+    }
+    dispatch(setAlert(false));
+  };
+
   return (
     <StyledDisplayContainer
       checked={selectedCar.id === id}
-      onClick={() => {
-        selectedCar.id === id
-          ? dispatch(selectCar({ id: 0, title: "", img: "", price: 0 }))
-          : dispatch(selectCar({ id, title: h1Text, img, price }));
-        dispatch(setAlert(false));
-      }}
+      onClick={() => carSelectHandler(id)}
     >
-      <StyledDisplayContainerTitle>{h1Text}</StyledDisplayContainerTitle>
-      <StyledImg src={img} />
+      <StyledDisplayContainerTitle>{title}</StyledDisplayContainerTitle>
+      <StyledImg src={car.options[0].img} />
       <StyledPriceSpan>from {displayPriceString(price)}</StyledPriceSpan>
       <StyledCheckButtonContainer>
         <StyledCheckButton checked={selectedCar.id === id}>

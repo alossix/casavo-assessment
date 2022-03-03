@@ -9,20 +9,27 @@ import {
 } from "./TotalPrice.styles";
 
 const TotalPrice = () => {
-  const selectedCar = useSelector(
-    (state: RootState) => state.builder.selectedCar
+  const { selectedCar, colorSelected, totalPrice } = useSelector(
+    (state: RootState) => state.builder
   );
-  const totalPrice = selectedCar.price;
+
+  const [displaySrc] = selectedCar.options.filter(
+    (option) => option.id === colorSelected
+  );
+
+  const displayPrice = totalPrice + displaySrc?.price;
 
   return (
     <StyledTotalPriceOuterContainer>
       <StyledSelectedCarImageContainer active={selectedCar.id !== 0}>
-        <img src={selectedCar.img} alt={selectedCar.title} />
+        {selectedCar.id !== 0 && (
+          <img src={displaySrc.img} alt={selectedCar.title} />
+        )}
       </StyledSelectedCarImageContainer>
       <StyledTotalPriceContainer>
         <StyledTotalTitle>Total</StyledTotalTitle>
         <StyledTotalPrice>
-          {totalPrice
+          {displayPrice
             .toLocaleString("en-US", {
               style: "currency",
               currency: "USD",
