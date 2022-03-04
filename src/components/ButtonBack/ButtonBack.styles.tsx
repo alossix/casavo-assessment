@@ -18,6 +18,7 @@ export const StyledButtonBack = styled.button`
   height: 100%;
   position: relative;
   border: none;
+  cursor: pointer;
   background-color: ${theme.colors.white};
   transition: 0.3s ease;
 

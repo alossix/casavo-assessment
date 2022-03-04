@@ -21,24 +21,29 @@ const Footer = () => {
       {step === 1 && alertSet && (
         <AlertBox>Please, select a model first!</AlertBox>
       )}
-      <StyledFooter>
+          {width < 1024 && selectedModel.id !== 0 && (
+              <StyledFooter>
         <StyledFooterNav>
           <TotalPrice />
-          {width < 1024 && selectedModel.id === 0 && null}
-          {width < 1024 && selectedModel.id !== 0 && (
             <StyledButtonsContainer>
               {step > 1 && <ButtonBack />}
               <ButtonSecondary />
             </StyledButtonsContainer>
+               </StyledFooterNav>
+      </StyledFooter>
           )}
           {width >= 1024 && (
+             <StyledFooter>
+        <StyledFooterNav>
+          <TotalPrice />
             <StyledButtonsContainer>
               {step > 1 && <ButtonBack />}
               <ButtonSecondary />
             </StyledButtonsContainer>
-          )}
-        </StyledFooterNav>
+               </StyledFooterNav>
       </StyledFooter>
+          )}
+     
     </>
   );
 };
