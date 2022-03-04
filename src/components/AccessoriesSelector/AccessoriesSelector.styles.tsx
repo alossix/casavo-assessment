@@ -7,6 +7,15 @@ export const StyledAccessoriesContainer = styled.div`
   gap: 1.25rem;
   width: 100%;
   margin-top: -1rem;
+
+  @media screen and (min-width: 1024px) {
+    margin-top: 2rem;
+    max-width: 75rem;
+  }
+
+  @media screen and (min-width: 1440px) {
+    gap: 1.5rem;
+  }
 `;
 
 export const StyledAccessoryContainer = styled.div<{ checked: boolean }>`
@@ -30,6 +39,11 @@ export const StyledAccessoryContainer = styled.div<{ checked: boolean }>`
     font-size: 1.375rem;
     padding: 2.2rem 2rem;
   }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 1.625rem;
+    padding-right: 1.5rem;
+  }
 `;
 
 export const StyledAccessorySubContainer = styled.div`
@@ -47,6 +61,11 @@ export const StyledAccessorySubContainer = styled.div`
     gap: 2.5rem;
     font-size: 1.375rem;
   }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 1.625rem;
+    gap: 2rem;
+  }
 `;
 export const StyledCheckButtonContainer = styled.div`
   display: flex;
@@ -57,6 +76,10 @@ export const StyledCheckButtonContainer = styled.div`
   @media screen and (min-width: 768px) {
     position: static;
     align-items: center;
+  }
+
+  @media screen and (min-width: 1024px) {
+    height: 2rem;
   }
 `;
 
