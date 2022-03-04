@@ -8,6 +8,7 @@ export const StyledHeaderContainer = styled.header`
   padding: 1.75rem 5% 0 5%;
   position: sticky;
   top: 0;
+  z-index: 2;
   background-color: ${theme.colors.white};
 
   @media screen and (min-width: 1024px) {
