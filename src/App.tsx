@@ -19,7 +19,29 @@ export interface CarProps {
   title: string;
   price: number;
   options: OptionsProps[];
+  accessories: AccessoriesProps[];
 }
+
+export interface AccessoriesProps {
+  id: number;
+  title: string;
+  price: number;
+}
+
+const accessories: AccessoriesProps[] = [
+  {
+    id: 1,
+    title: "BMW Laserlight",
+    price: 6300,
+  },
+  {
+    id: 2,
+    title: "BMW Charging Station",
+    price: 1080,
+  },
+  { id: 3, title: "BMW Maintenance Program Upgrade", price: 1895 },
+  { id: 4, title: "1 Year BMW Maintenance Program Upgrade", price: 975 },
+];
 
 const cars: CarProps[] = [
   {
@@ -49,6 +71,7 @@ const cars: CarProps[] = [
         price: 550,
       },
     ],
+    accessories: [accessories[1], accessories[2], accessories[3]],
   },
   {
     id: 2,
@@ -69,6 +92,12 @@ const cars: CarProps[] = [
         colorCode: "#d1d1d1",
         price: 1800,
       },
+    ],
+    accessories: [
+      accessories[0],
+      accessories[1],
+      accessories[2],
+      accessories[3],
     ],
   },
 ];

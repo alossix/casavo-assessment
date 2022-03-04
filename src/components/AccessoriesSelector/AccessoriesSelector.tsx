@@ -1,4 +1,17 @@
+import { useSelector } from "react-redux";
+import { AccessoryOption } from ".";
+import { RootState } from "../../redux/store";
+import { StyledAccessoriesContainer } from "./AccessoriesSelector.styles";
+
 const AccessoriesSelector = () => {
-  return <div>AccessoriesSelector</div>;
+  const { selectedCar } = useSelector((state: RootState) => state.builder);
+
+  return (
+    <StyledAccessoriesContainer>
+      {selectedCar.accessories.map((accessory) => (
+        <AccessoryOption accessory={accessory} />
+      ))}
+    </StyledAccessoriesContainer>
+  );
 };
 export default AccessoriesSelector;

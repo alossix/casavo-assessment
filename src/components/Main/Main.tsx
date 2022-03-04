@@ -7,7 +7,7 @@ import {
 import { CarProps } from "../../App";
 import DisplayShowcase from "../DisplayShowcase";
 import ColorSelector from "../ColorSelector";
-import AccessoriesSelector from "../AccessoriesSelector";
+import { AccessoriesSelector } from "../AccessoriesSelector";
 import Summary from "../Summary";
 
 type MainProps = {

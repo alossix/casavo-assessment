@@ -24,6 +24,7 @@ const initialState: BuilderState = {
         price: 0,
       },
     ],
+    accessories: [],
   },
   step: 1,
   colorSelected: 1,
