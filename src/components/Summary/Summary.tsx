@@ -1,6 +1,5 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import ButtonColorSelector from "../ButtonColorSelector";
 import {
   StyledSummaryContainer,
   StyledSection,
@@ -12,16 +11,18 @@ import {
   StyledColorButtonContainer,
   StyledColorButton,
   StyledColorButtonDescription,
+  StyledAccessoriesContainer,
 } from "./Summary.styles";
 
 const Summary = () => {
-  const { selectedModel, colorSelected } = useSelector(
+  const { selectedAccessories, selectedModel, colorSelected } = useSelector(
     (state: RootState) => state.builder
   );
 
   const [displaySrc] = selectedModel.options.filter(
     (option) => option.id === colorSelected
   );
+  console.log(selectedAccessories);
   return (
     <StyledSummaryContainer>
       <StyledSection id="summary-model">
@@ -56,6 +57,17 @@ const Summary = () => {
       <StyledSection id="summary-accessories">
         <StyledSectionDivider />
         <StyledSectionTitle>Accessories</StyledSectionTitle>
+        <StyledAccessoriesContainer>
+          {selectedAccessories.length === 0 ? (
+            <li>No Accessories selected;</li>
+          ) : (
+            <>
+              {selectedAccessories.map((selectedAccessory) => (
+                <li key={selectedAccessory.id}>{selectedAccessory.title}</li>
+              ))}
+            </>
+          )}
+        </StyledAccessoriesContainer>
       </StyledSection>
     </StyledSummaryContainer>
   );

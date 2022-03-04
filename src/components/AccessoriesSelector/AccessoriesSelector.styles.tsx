@@ -6,14 +6,13 @@ export const StyledAccessoriesContainer = styled.div`
   flex-direction: column;
   gap: 1.25rem;
   width: 100%;
-  margin-top: -1rem;
 
   @media screen and (min-width: 1024px) {
     margin-top: 2rem;
     max-width: 75rem;
   }
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 1481px) {
     gap: 1.5rem;
   }
 `;
@@ -29,7 +28,7 @@ export const StyledAccessoryContainer = styled.div<{ checked: boolean }>`
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.5rem;
-  padding: 2.2rem 2rem 1.6rem 2rem;
+  padding: 2rem 1.5rem 1.6rem 1.5rem;
   border: 2px solid
     ${({ checked }) => (checked ? theme.colors.gold : theme.colors.lightGray)};
   transition: 0.3s ease;

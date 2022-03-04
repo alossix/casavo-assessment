@@ -4,8 +4,9 @@ import theme from "../../theme";
 export const StyledSummaryContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
   width: 100%;
+  padding-top: 1rem;
 `;
 
 export const StyledSection = styled.section`
@@ -33,7 +34,7 @@ export const StyledSectionTitle = styled.h2`
   font-weight: 700;
   letter-spacing: 1.6px;
   text-transform: uppercase;
-  margin-bottom: 2.25rem;
+  margin-bottom: 2rem;
 
   @media screen and (min-width: 1024px) {
     font-size: 1.125rem;
@@ -59,7 +60,7 @@ export const StyledModelTitle = styled.h3`
   font-size: 1.5rem;
   font-weight: 700;
   line-height: 1.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
 
   @media screen and (min-width: 1024px) {
     font-size: 2.5rem;
@@ -70,7 +71,7 @@ export const StyledModelTitle = styled.h3`
 export const StyledModelDescription = styled.p`
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.5rem;
+  line-height: 1.6rem;
   color: ${theme.colors.darkGray};
 
   @media screen and (min-width: 1024px) {
@@ -83,7 +84,7 @@ export const StyledModelDescription = styled.p`
 export const StyledColorButtonContainer = styled.div`
   display: flex;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.6rem;
 `;
 
 export const StyledColorButton = styled.button<{
@@ -105,8 +106,27 @@ export const StyledColorButton = styled.button<{
 `;
 
 export const StyledColorButtonDescription = styled.span`
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-weight: 400;
   line-height: 1.5rem;
   text-transform: capitalize;
+
+  @media screen and (min-width: 1024px) {
+    font-size: 1.5rem;
+  }
+`;
+
+export const StyledAccessoriesContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+  color: ${theme.colors.darkGray};
+
+  @media screen and (min-width: 1024px) {
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 12rem;
+    font-size: 1.125rem;
+  }
 `;

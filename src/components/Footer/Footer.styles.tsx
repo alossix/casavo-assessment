@@ -10,8 +10,12 @@ export const StyledFooter = styled.footer`
   background-color: ${theme.colors.white};
 
   @media screen and (min-width: 1024px) {
-    height: 7.5rem;
+    height: 6.25rem;
     box-shadow: 0 0 40px rgb(0 0 0 / 10%);
+  }
+
+  @media screen and (min-width: 1481px) {
+    height: 7.5rem;
   }
 `;
 

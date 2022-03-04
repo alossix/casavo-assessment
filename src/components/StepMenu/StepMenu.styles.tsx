@@ -9,7 +9,21 @@ export const StyledStepMenuHeader = styled.header`
   gap: 0.1875rem;
 
   @media screen and (min-width: 1024px) {
-    margin-bottom: 2.75rem;
+    margin-bottom: 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 9rem;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
+
+    @media screen and (min-width: 1481px) {
+      top: 10.75rem;
+    }
   }
 `;
 
@@ -36,7 +50,6 @@ export const StyledStepTitle = styled.h3<{ disabled?: boolean }>`
   transition: 0.3s ease;
 
   &:hover {
-    /* color: ${theme.colors.gold}; */
     color: ${({ disabled }) =>
       disabled ? theme.colors.disabled : theme.colors.gold};
   }

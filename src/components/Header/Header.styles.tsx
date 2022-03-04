@@ -1,10 +1,14 @@
 import styled from "styled-components";
+import theme from "../../theme";
 
 export const StyledHeaderContainer = styled.header`
   display: flex;
   flex-direction: column;
   line-height: 1.5rem;
   padding: 1.75rem 5% 0 5%;
+  position: sticky;
+  top: 0;
+  background-color: ${theme.colors.white};
 
   @media screen and (min-width: 1024px) {
     padding: 0;
