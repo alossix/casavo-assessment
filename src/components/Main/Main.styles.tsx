@@ -5,7 +5,7 @@ export const StyledMainContainer = styled.main`
   justify-content: center;
   padding: 1rem 5%;
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 768px) {
     padding: 0 5%;
   }
 `;

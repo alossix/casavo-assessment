@@ -15,6 +15,10 @@ export const StyledColorSelectorImgContainer = styled.div`
     width: 100%;
     max-width: 750px;
   }
+
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 1.75rem;
+  }
 `;
 
 export const StyledColorButtonContainer = styled.div`

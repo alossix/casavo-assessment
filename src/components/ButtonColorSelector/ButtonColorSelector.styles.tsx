@@ -21,4 +21,9 @@ export const StyledColorButton = styled.button<{
   background-color: ${({ colorCode }) => colorCode && colorCode};
   box-shadow: 0 0 0 2px
     ${({ highlighted }) => (highlighted ? theme.colors.gold : `#ededed`)};
+
+  @media screen and (min-width: 768px) {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
 `;

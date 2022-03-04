@@ -7,6 +7,10 @@ export const StyledStepMenuHeader = styled.header`
   width: 100%;
   margin-bottom: 4.75rem;
   gap: 0.1875rem;
+
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 2.75rem;
+  }
 `;
 
 export const StyledStepContainer = styled.div<{ highlighted: boolean }>`

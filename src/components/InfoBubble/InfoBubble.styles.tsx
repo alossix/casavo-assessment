@@ -9,7 +9,7 @@ export const StyledInfoBubble = styled.div`
   text-transform: capitalize;
   white-space: nowrap;
   position: absolute;
-  bottom: 2rem;
+  top: -2.2rem;
   left: 50%;
   transform: translate(-50%, -50%);
 
