@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../../redux/store";
-import { useState } from "react";
-import { setTotalPrice } from "../../redux/builder";
+import { useEffect, useState } from "react";
+import { addAccessory, removeAccessory } from "../../redux/builder";
 import { AccessoriesProps } from "../../App";
 import Checkmark from "../../icons/Checkmark";
 import {
@@ -17,18 +17,29 @@ type AccessoryOptionProps = {
 
 const AccessoryOption = ({ accessory }: AccessoryOptionProps) => {
   const [checked, setChecked] = useState(false);
-  const { totalPrice } = useSelector((state: RootState) => state.builder);
+
+  const { selectedAccessories } = useSelector(
+    (state: RootState) => state.builder
+  );
   const dispatch = useDispatch();
 
   const checkButtonClickHandler = () => {
     if (checked) {
-      setChecked(() => false);
-      dispatch(setTotalPrice(totalPrice - accessory.price));
+      dispatch(removeAccessory(accessory.id));
     } else {
-      setChecked(() => true);
-      dispatch(setTotalPrice(totalPrice + accessory.price));
+      dispatch(addAccessory(accessory));
     }
   };
+
+  useEffect(() => {
+    setChecked(
+      () =>
+        !!selectedAccessories.find(
+          (selectedAccessory) => selectedAccessory.id === accessory.id
+        )
+    );
+  }, [accessory, selectedAccessories]);
+
   return (
     <StyledAccessoryContainer
       checked={checked}

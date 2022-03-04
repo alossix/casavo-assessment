@@ -8,11 +8,11 @@ import {
 import ButtonColorSelector from "../ButtonColorSelector";
 
 const ColorSelector = () => {
-  const { selectedCar, colorSelected } = useSelector(
+  const { selectedModel, colorSelected } = useSelector(
     (state: RootState) => state.builder
   );
 
-  const [displaySrc] = selectedCar.options.filter(
+  const [displaySrc] = selectedModel.options.filter(
     (option) => option.id === colorSelected
   );
 
@@ -22,8 +22,8 @@ const ColorSelector = () => {
         <img src={displaySrc.img} alt={displaySrc.title} />
       </StyledColorSelectorImgContainer>
       <StyledColorButtonContainer>
-        {selectedCar.options.map((option) => (
-          <ButtonColorSelector option={option} />
+        {selectedModel.options.map((option) => (
+          <ButtonColorSelector key={option.id} option={option} />
         ))}
       </StyledColorButtonContainer>
     </StyledColorSelectorContainer>

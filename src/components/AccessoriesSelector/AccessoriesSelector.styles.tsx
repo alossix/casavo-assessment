@@ -22,12 +22,14 @@ export const StyledAccessoryContainer = styled.div<{ checked: boolean }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  text-align: center;
+  gap: 1.25rem;
   border-radius: 0.25rem;
   cursor: pointer;
   font-size: 1.125rem;
   font-weight: 700;
-  padding: 2.2rem 2rem 1.2rem 2rem;
+  line-height: 1.5rem;
+  padding: 2.2rem 2rem 1.6rem 2rem;
   border: 2px solid
     ${({ checked }) => (checked ? theme.colors.gold : theme.colors.lightGray)};
   transition: 0.3s ease;
@@ -50,9 +52,10 @@ export const StyledAccessorySubContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 0.7rem;
   color: ${theme.colors.darkGray};
   font-size: 1rem;
+  line-height: 1rem;
   position: relative;
 
   @media screen and (min-width: 768px) {

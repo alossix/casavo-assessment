@@ -12,7 +12,7 @@ import TotalPrice from "../TotalPrice";
 import ButtonBack from "../ButtonBack";
 
 const Footer = () => {
-  const { alertSet, selectedCar, step } = useSelector(
+  const { alertSet, selectedModel, step } = useSelector(
     (state: RootState) => state.builder
   );
   const { width } = useWindowSize();
@@ -24,8 +24,8 @@ const Footer = () => {
       <StyledFooter>
         <StyledFooterNav>
           <TotalPrice />
-          {width < 1024 && selectedCar.id === 0 && null}
-          {width < 1024 && selectedCar.id !== 0 && (
+          {width < 1024 && selectedModel.id === 0 && null}
+          {width < 1024 && selectedModel.id !== 0 && (
             <StyledButtonsContainer>
               {step > 1 && <ButtonBack />}
               <ButtonSecondary />

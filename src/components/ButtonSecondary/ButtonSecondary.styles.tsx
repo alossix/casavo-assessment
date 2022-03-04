@@ -59,5 +59,6 @@ export const StyledButtonSecondary = styled.button<{
     width: 12.125rem;
     height: 3.5rem;
     border-radius: 2rem;
+    box-shadow: none;
   }
 `;

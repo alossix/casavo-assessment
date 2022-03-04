@@ -9,21 +9,27 @@ import {
 } from "./TotalPrice.styles";
 
 const TotalPrice = () => {
-  const { selectedCar, colorSelected, totalPrice } = useSelector(
-    (state: RootState) => state.builder
-  );
+  const { selectedAccessories, selectedModel, colorSelected, totalPrice } =
+    useSelector((state: RootState) => state.builder);
 
-  const [displaySrc] = selectedCar.options.filter(
+  const [displaySrc] = selectedModel.options.filter(
     (option) => option.id === colorSelected || option.id === 0
   );
 
-  const displayPrice = totalPrice + displaySrc?.price;
+  const accessoriesPrices =
+    selectedAccessories.length >= 1
+      ? selectedAccessories
+          .map((accessory) => accessory.price)
+          .reduce((acc, currVal) => acc + currVal)
+      : 0;
+
+  const displayPrice = totalPrice + displaySrc?.price + accessoriesPrices;
 
   return (
     <StyledTotalPriceOuterContainer>
-      <StyledSelectedCarImageContainer active={selectedCar.id !== 0}>
-        {selectedCar.id !== 0 && (
-          <img src={displaySrc.img} alt={selectedCar.title} />
+      <StyledSelectedCarImageContainer active={selectedModel.id !== 0}>
+        {selectedModel.id !== 0 && (
+          <img src={displaySrc.img} alt={selectedModel.title} />
         )}
       </StyledSelectedCarImageContainer>
       <StyledTotalPriceContainer>

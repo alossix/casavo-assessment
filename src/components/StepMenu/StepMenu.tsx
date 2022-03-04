@@ -8,12 +8,12 @@ import {
 } from "./StepMenu.styles";
 
 const StepMenu = () => {
-  const { selectedCar, step } = useSelector(
+  const { selectedModel, step } = useSelector(
     (state: RootState) => state.builder
   );
   const dispatch = useDispatch();
 
-  const disabled = selectedCar.id === 0;
+  const disabled = selectedModel.id === 0;
 
   const handleStepMenuClick = (stepNum: number) => {
     if (disabled) {

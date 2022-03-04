@@ -1,17 +1,20 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { CarProps, OptionsProps } from "../App";
+import { AccessoriesProps, CarProps, OptionsProps } from "../App";
 
 interface BuilderState {
   alertSet: boolean;
   colorSelected: number;
-  selectedCar: CarProps;
+  selectedAccessories: AccessoriesProps[];
+  selectedModel: CarProps;
   step: number;
   totalPrice: number;
 }
 
 const initialState: BuilderState = {
   alertSet: false,
-  selectedCar: {
+  colorSelected: 1,
+  selectedAccessories: [],
+  selectedModel: {
     id: 0,
     title: "",
     price: 0,
@@ -27,7 +30,6 @@ const initialState: BuilderState = {
     accessories: [],
   },
   step: 1,
-  colorSelected: 1,
   totalPrice: 0,
 };
 
@@ -35,15 +37,24 @@ export const builderSlice = createSlice({
   name: "builder",
   initialState,
   reducers: {
+    addAccessory: (state, action: PayloadAction<AccessoriesProps>) => {
+      state.selectedAccessories.push(action.payload);
+    },
+    removeAccessory: (state, action: PayloadAction<number>) => {
+      const index = state.selectedAccessories
+        .map((accessory) => accessory.id)
+        .indexOf(action.payload);
+      state.selectedAccessories.splice(index, 1);
+    },
     setAlert: (state, action: PayloadAction<boolean>) => {
       state.alertSet = action.payload;
     },
     selectCar: (state, action: PayloadAction<CarProps>) => {
-      state.selectedCar = action.payload;
+      state.selectedModel = action.payload;
     },
     selectCarOption: (state, action: PayloadAction<OptionsProps>) => {
-      state.selectedCar.options.pop();
-      state.selectedCar.options.push(action.payload);
+      state.selectedModel.options.pop();
+      state.selectedModel.options.push(action.payload);
     },
     selectCarReset: () => initialState,
     setStep: (state, action: PayloadAction<number>) => {
@@ -60,6 +71,8 @@ export const builderSlice = createSlice({
 
 // Action creators are generated for each case reducer function
 export const {
+  addAccessory,
+  removeAccessory,
   setAlert,
   selectCar,
   selectCarReset,
