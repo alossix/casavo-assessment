@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import { setColorSelected } from "../../redux/builder";
 import { OptionsProps } from "../../App";
-import { StyledColorButton } from "./ButtonColorSelector.styles";
+import {
+  StyledColorButtonContainer,
+  StyledColorButton,
+} from "./ButtonColorSelector.styles";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import InfoBubble from "../InfoBubble";
 
@@ -31,17 +34,16 @@ const ButtonColorSelector = ({
   useOnClickOutside(bubbleRef, clickOutsideHandler);
 
   return (
-    <>
+    <StyledColorButtonContainer>
       <StyledColorButton
         key={option.id}
         highlighted={colorSelected === option.id}
         colorCode={option.colorCode}
         onClick={() => handleColorSelect(option)}
         ref={bubbleRef}
-      >
-        <InfoBubble visible={infoBubbleVisible} option={option} />
-      </StyledColorButton>
-    </>
+      ></StyledColorButton>
+      <InfoBubble visible={infoBubbleVisible} option={option} />
+    </StyledColorButtonContainer>
   );
 };
 export default ButtonColorSelector;

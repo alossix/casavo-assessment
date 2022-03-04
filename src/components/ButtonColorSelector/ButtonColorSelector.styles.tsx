@@ -2,6 +2,11 @@ import { RefObject } from "react";
 import styled from "styled-components";
 import theme from "../../theme";
 
+export const StyledColorButtonContainer = styled.div`
+  display: flex;
+  position: relative;
+`;
+
 export const StyledColorButton = styled.button<{
   colorCode: string;
   highlighted: boolean;
@@ -16,5 +21,4 @@ export const StyledColorButton = styled.button<{
   background-color: ${({ colorCode }) => colorCode && colorCode};
   box-shadow: 0 0 0 2px
     ${({ highlighted }) => (highlighted ? theme.colors.gold : `#ededed`)};
-  position: relative;
 `;
