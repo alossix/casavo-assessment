@@ -23,6 +23,10 @@ export const StyledColorSelectorImgContainer = styled.div`
   @media screen and (min-width: 1024px) {
     margin: 1rem 0 2rem 0;
   }
+
+  @media screen and (min-width: 1481px) {
+    margin: 1rem 0 4rem 0;
+  }
 `;
 
 export const StyledColorButtonContainer = styled.div`

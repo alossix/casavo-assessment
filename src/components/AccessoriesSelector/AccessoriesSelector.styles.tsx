@@ -12,8 +12,9 @@ export const StyledAccessoriesContainer = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
-    margin-top: 2rem;
+    margin-top: 1rem;
     max-width: 75rem;
+    gap: 1.25rem;
   }
 
   @media screen and (min-width: 1481px) {
@@ -48,7 +49,7 @@ export const StyledAccessoryContainer = styled.div<{ checked: boolean }>`
 
   @media screen and (min-width: 1024px) {
     font-size: 1.625rem;
-    padding-right: 1.5rem;
+    padding: 2.3rem 1.5rem 2.3rem 2rem;
   }
 `;
 
@@ -118,7 +119,7 @@ export const StyledCheckButton = styled.button<{ checked: boolean }>`
     checked &&
     `
       animation-name: accessoriesCheckbox;
-      animation-duration: 0.3s;
+      animation-duration: 0.35s;
       width: 2.75rem;
       height: 2.75rem;
       background-color: ${theme.colors.gold};

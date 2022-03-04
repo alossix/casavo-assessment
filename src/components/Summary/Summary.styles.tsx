@@ -28,7 +28,7 @@ export const StyledSectionDivider = styled.div`
   margin-bottom: 0.6rem;
 
   @media screen and (min-width: 1024px) {
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 0.75rem;
   }
 `;
@@ -56,6 +56,7 @@ export const StyledSummaryImgContainer = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
+    margin-top: 0.35rem;
     margin-bottom: 2rem;
   }
 `;
@@ -73,6 +74,7 @@ export const StyledModelTitle = styled.h3`
   @media screen and (min-width: 1024px) {
     font-size: 2.5rem;
     line-height: 2.5rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -86,6 +88,8 @@ export const StyledModelDescription = styled.p`
     font-size: 1.125rem;
     line-height: 1.8rem;
     text-align: center;
+    margin-bottom: 1.5rem;
+    max-width: 75rem;
   }
 `;
 
@@ -96,6 +100,12 @@ export const StyledColorButtonContainer = styled.div`
 
   @media screen and (min-width: 768px) {
     gap: 0.55rem;
+  }
+
+  @media screen and (min-width: 1024px) {
+    gap: 0.75rem;
+    margin-top: 0.35rem;
+    margin-bottom: 1.5rem;
   }
 `;
 
@@ -142,8 +152,9 @@ export const StyledAccessoriesContainer = styled.div`
 
   @media screen and (min-width: 1024px) {
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 12rem;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    margin-bottom: 6rem;
     font-size: 1.125rem;
   }
 `;

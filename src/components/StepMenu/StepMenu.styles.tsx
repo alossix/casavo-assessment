@@ -21,6 +21,9 @@ export const StyledStepMenuHeader = styled.header`
     height: 70px;
     background-image: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
 
+    @media screen and (min-width: 1024px) {
+      top: 8.9rem;
+    }
     @media screen and (min-width: 1481px) {
       top: 10.75rem;
     }
