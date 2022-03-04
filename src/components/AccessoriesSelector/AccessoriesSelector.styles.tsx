@@ -4,43 +4,98 @@ import theme from "../../theme";
 export const StyledAccessoriesContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.15rem;
+  gap: 1.25rem;
   width: 100%;
+  margin-top: -1rem;
 `;
 
 export const StyledAccessoryContainer = styled.div<{ checked: boolean }>`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  gap: 1.5rem;
   border-radius: 0.25rem;
   cursor: pointer;
-  font-size: 1.375rem;
+  font-size: 1.125rem;
   font-weight: 700;
-  padding: 2.2rem 2rem;
+  padding: 2.2rem 2rem 1.2rem 2rem;
   border: 2px solid
     ${({ checked }) => (checked ? theme.colors.gold : theme.colors.lightGray)};
+  transition: 0.3s ease;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.375rem;
+    padding: 2.2rem 2rem;
+  }
 `;
 
 export const StyledAccessorySubContainer = styled.div`
   display: flex;
-  gap: 2.5rem;
+  flex-direction: column;
   align-items: center;
+  gap: 1rem;
+  color: ${theme.colors.darkGray};
+  font-size: 1rem;
+  position: relative;
+
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    color: ${theme.colors.black};
+    gap: 2.5rem;
+    font-size: 1.375rem;
+  }
+`;
+export const StyledCheckButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+
+  @media screen and (min-width: 768px) {
+    position: static;
+    align-items: center;
+  }
 `;
 
 export const StyledCheckButton = styled.button<{ checked: boolean }>`
+  @keyframes accessoriesCheckbox {
+    0% {
+      transform: scale(1.25);
+    }
+    25% {
+      transform: scale(1.1);
+    }
+    75% {
+      transform: scale(1.25);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
   border: 2px solid ${theme.colors.lightGray};
   border-radius: 0.25rem;
   background-color: transparent;
   width: 1.9rem;
   height: 1.9rem;
+  position: absolute;
+  top: 2.25rem;
+
   ${({ checked }) =>
     checked &&
     `
-      animation-name: checkbox;
+      animation-name: accessoriesCheckbox;
       animation-duration: 0.3s;
       width: 2.75rem;
       height: 2.75rem;
       background-color: ${theme.colors.gold};
       border: 2px solid ${theme.colors.gold};
   `};
+
+  @media screen and (min-width: 768px) {
+    position: static;
+  }
 `;

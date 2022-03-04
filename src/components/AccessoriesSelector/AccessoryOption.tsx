@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { AccessoriesProps } from "../../App";
-import { StyledCheckButton } from "../DisplayShowcase/DisplayShowcase.styles";
+import Checkmark from "../../icons/Checkmark";
 import {
   StyledAccessoryContainer,
   StyledAccessorySubContainer,
+  StyledCheckButtonContainer,
+  StyledCheckButton,
 } from "./AccessoriesSelector.styles";
 
 type AccessoryOptionProps = {
@@ -29,7 +31,11 @@ const AccessoryOption = ({ accessory }: AccessoryOptionProps) => {
             maximumFractionDigits: 0,
           })
           .replace(",", ".")}
-        <StyledCheckButton checked={checked} />
+        <StyledCheckButtonContainer>
+          <StyledCheckButton checked={checked}>
+            {checked && <Checkmark />}
+          </StyledCheckButton>
+        </StyledCheckButtonContainer>
       </StyledAccessorySubContainer>
     </StyledAccessoryContainer>
   );

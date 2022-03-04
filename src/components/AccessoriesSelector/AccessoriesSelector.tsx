@@ -9,7 +9,7 @@ const AccessoriesSelector = () => {
   return (
     <StyledAccessoriesContainer>
       {selectedCar.accessories.map((accessory) => (
-        <AccessoryOption accessory={accessory} />
+        <AccessoryOption key={accessory.id} accessory={accessory} />
       ))}
     </StyledAccessoriesContainer>
   );
