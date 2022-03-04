@@ -6,6 +6,7 @@ export const StyledAccessoriesContainer = styled.div`
   flex-direction: column;
   gap: 1.25rem;
   width: 100%;
+  animation: navFade 0.5s linear;
 
   @media screen and (min-width: 768px) {
     gap: 0.8rem;

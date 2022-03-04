@@ -7,6 +7,7 @@ export const StyledSummaryContainer = styled.div`
   gap: 2rem;
   width: 100%;
   padding-top: 1rem;
+  animation: navFade 0.5s linear;
 
   @media screen and (min-width: 768px) {
     padding-top: 0;
@@ -117,7 +118,6 @@ export const StyledColorButton = styled.button<{
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 100%;
-  cursor: pointer;
   background-color: ${({ colorCode }) => colorCode && colorCode};
   box-shadow: 0 0 0 2px ${theme.colors.lightGray};
 
