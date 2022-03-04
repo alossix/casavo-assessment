@@ -6,22 +6,45 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import { StyledOuterContainer, StyledInnerContainer } from "./App.styles";
 
-export type IOptionsProps = {
+export interface OptionsProps {
   id: number;
   title: string;
   img: string;
   colorCode: string;
   price: number;
-};
+}
 
-export type ICarProps = {
+export interface CarProps {
   id: number;
   title: string;
   price: number;
-  options: IOptionsProps[];
-};
+  options: OptionsProps[];
+  accessories: AccessoriesProps[];
+  description: string;
+}
 
-const cars: ICarProps[] = [
+export interface AccessoriesProps {
+  id: number;
+  title: string;
+  price: number;
+}
+
+const accessories: AccessoriesProps[] = [
+  {
+    id: 1,
+    title: "BMW Laserlight",
+    price: 6300,
+  },
+  {
+    id: 2,
+    title: "BMW Charging Station",
+    price: 1080,
+  },
+  { id: 3, title: "BMW Maintenance Program Upgrade", price: 1895 },
+  { id: 4, title: "1 Year BMW Maintenance Program Upgrade", price: 975 },
+];
+
+const cars: CarProps[] = [
   {
     id: 1,
     title: "BMW i3",
@@ -49,6 +72,9 @@ const cars: ICarProps[] = [
         price: 550,
       },
     ],
+    accessories: [accessories[1], accessories[2], accessories[3]],
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit saepe facilis hic, unde, numquam vel. Blanditiis sed laboriosam ratione nulla atque molestias at explicabo aperiam reprehenderit culpa nihil, quis totam cupiditate dolores in quisquam magnam inventore nobis, rem adipisci eveniet illum.",
   },
   {
     id: 2,
@@ -70,6 +96,14 @@ const cars: ICarProps[] = [
         price: 1800,
       },
     ],
+    accessories: [
+      accessories[0],
+      accessories[1],
+      accessories[2],
+      accessories[3],
+    ],
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit saepe facilis hic, unde, numquam vel. Blanditiis sed laboriosam ratione nulla atque molestias at explicabo aperiam reprehenderit culpa nihil, quis totam cupiditate dolores in quisquam magnam inventore nobis, rem adipisci eveniet illum.",
   },
 ];
 

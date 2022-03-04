@@ -33,6 +33,10 @@ export const StyledImg = styled.img`
 export const StyledPriceSpan = styled.span`
   margin-bottom: 0.35rem;
   color: ${theme.colors.darkGray};
+
+  @media screen and (min-width: 1024px) {
+    margin-bottom: 0.45rem;
+  }
 `;
 
 export const StyledCheckButtonContainer = styled.div`

@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 import { StyledAlertBoxContainer, StyledAlertBox } from "./AlertBox.styles";
 
-type IAlertBoxProps = {
+type AlertBoxProps = {
   children: ReactNode;
 };
 
-const AlertBox = ({ children }: IAlertBoxProps) => {
+const AlertBox = ({ children }: AlertBoxProps) => {
   return (
     <StyledAlertBoxContainer>
       <StyledAlertBox>{children}</StyledAlertBox>

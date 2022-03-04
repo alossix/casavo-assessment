@@ -5,11 +5,11 @@ import {
   StyledButtonTextContainer,
 } from "./ButtonPrimary.styles";
 
-type IButtonPrimaryProps = {
+type ButtonPrimaryProps = {
   children: ReactNode;
 };
 
-const ButtonPrimary = ({ children }: IButtonPrimaryProps) => {
+const ButtonPrimary = ({ children }: ButtonPrimaryProps) => {
   return (
     <StyledButtonPrimary>
       <StyledArrow />

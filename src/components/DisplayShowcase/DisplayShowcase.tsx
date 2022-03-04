@@ -15,10 +15,10 @@ import {
   StyledPriceSpan,
 } from "./DisplayShowcase.styles";
 import Checkmark from "../../icons/Checkmark";
-import { ICarProps } from "../../App";
+import { CarProps } from "../../App";
 
-type IDisplayShowcaseProps = {
-  car: ICarProps;
+type DisplayShowcaseProps = {
+  car: CarProps;
 };
 
 const displayPriceString = (price: number) => {
@@ -31,13 +31,13 @@ const displayPriceString = (price: number) => {
     .replace(",", ".");
 };
 
-const DisplayShowcase = ({ car }: IDisplayShowcaseProps) => {
+const DisplayShowcase = ({ car }: DisplayShowcaseProps) => {
   const { id, title, price } = car;
-  const { selectedCar } = useSelector((state: RootState) => state.builder);
+  const { selectedModel } = useSelector((state: RootState) => state.builder);
   const dispatch = useDispatch();
 
   const carSelectHandler = (id: number) => {
-    if (selectedCar.id === id) {
+    if (selectedModel.id === id) {
       dispatch(selectCarReset());
       dispatch(setTotalPrice(0));
     } else {
@@ -50,15 +50,15 @@ const DisplayShowcase = ({ car }: IDisplayShowcaseProps) => {
 
   return (
     <StyledDisplayContainer
-      checked={selectedCar.id === id}
+      checked={selectedModel.id === id}
       onClick={() => carSelectHandler(id)}
     >
       <StyledDisplayContainerTitle>{title}</StyledDisplayContainerTitle>
       <StyledImg src={car.options[0].img} />
       <StyledPriceSpan>from {displayPriceString(price)}</StyledPriceSpan>
       <StyledCheckButtonContainer>
-        <StyledCheckButton checked={selectedCar.id === id}>
-          {selectedCar.id === id && <Checkmark />}
+        <StyledCheckButton checked={selectedModel.id === id}>
+          {selectedModel.id === id && <Checkmark />}
         </StyledCheckButton>
       </StyledCheckButtonContainer>
     </StyledDisplayContainer>

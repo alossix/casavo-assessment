@@ -1,10 +1,34 @@
 import styled from "styled-components";
-import theme from "../../theme";
 
 export const StyledColorSelectorContainer = styled.div`
+  @keyframes navFade {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 0.25;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    75% {
+      opacity: 0.75;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 1rem 0;
+  opacity: 1;
+  animation: navFade 0.5s linear;
+
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
 `;
 
 export const StyledColorSelectorImgContainer = styled.div`
@@ -15,6 +39,14 @@ export const StyledColorSelectorImgContainer = styled.div`
     width: 100%;
     max-width: 750px;
   }
+
+  @media screen and (min-width: 1024px) {
+    margin: 1rem 0 2rem 0;
+  }
+
+  @media screen and (min-width: 1481px) {
+    margin: 1rem 0 4rem 0;
+  }
 `;
 
 export const StyledColorButtonContainer = styled.div`
@@ -22,19 +54,8 @@ export const StyledColorButtonContainer = styled.div`
   justify-content: center;
   gap: 0.75rem;
   width: 100%;
-`;
 
-export const StyledColorButton = styled.button<{
-  colorCode: string;
-  highlighted: boolean;
-}>`
-  padding: 2px;
-  border: 2px solid ${theme.colors.white};
-  width: 1.9rem;
-  height: 1.9rem;
-  border-radius: 100%;
-  cursor: pointer;
-  background-color: ${({ colorCode }) => colorCode && colorCode};
-  box-shadow: 0 0 0 2px
-    ${({ highlighted }) => (highlighted ? theme.colors.gold : `#ededed`)};
+  @media screen and (min-width: 768px) {
+    gap: 1.15rem;
+  }
 `;

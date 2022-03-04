@@ -1,27 +1,20 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
-import { setColorSelected } from "../../redux/builder";
 import {
   StyledColorSelectorContainer,
   StyledColorSelectorImgContainer,
   StyledColorButtonContainer,
-  StyledColorButton,
 } from "./ColorSelector.styles";
-import { IOptionsProps } from "../../App";
+import ButtonColorSelector from "../ButtonColorSelector";
 
 const ColorSelector = () => {
-  const { selectedCar, colorSelected } = useSelector(
+  const { selectedModel, colorSelected } = useSelector(
     (state: RootState) => state.builder
   );
-  const dispatch = useDispatch();
 
-  const [displaySrc] = selectedCar.options.filter(
+  const [displaySrc] = selectedModel.options.filter(
     (option) => option.id === colorSelected
   );
-
-  const handleColorSelect = (option: IOptionsProps) => {
-    dispatch(setColorSelected(option.id));
-  };
 
   return (
     <StyledColorSelectorContainer>
@@ -29,13 +22,8 @@ const ColorSelector = () => {
         <img src={displaySrc.img} alt={displaySrc.title} />
       </StyledColorSelectorImgContainer>
       <StyledColorButtonContainer>
-        {selectedCar.options.map((option) => (
-          <StyledColorButton
-            key={option.id}
-            highlighted={colorSelected === option.id}
-            colorCode={option.colorCode}
-            onClick={() => handleColorSelect(option)}
-          />
+        {selectedModel.options.map((option) => (
+          <ButtonColorSelector key={option.id} option={option} />
         ))}
       </StyledColorButtonContainer>
     </StyledColorSelectorContainer>

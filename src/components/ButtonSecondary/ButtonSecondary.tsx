@@ -5,13 +5,13 @@ import Arrow from "../../icons/Arrow";
 import { StyledButtonSecondary } from "./ButtonSecondary.styles";
 
 const ButtonSecondary = (): JSX.Element => {
-  const { selectedCar, step } = useSelector(
+  const { selectedModel, step } = useSelector(
     (state: RootState) => state.builder
   );
   const dispatch = useDispatch();
 
   const handleButtonSecondaryClick = () => {
-    if (selectedCar.id === 0) {
+    if (selectedModel.id === 0) {
       dispatch(setAlert(true));
     } else {
       if (step <= 3) {
@@ -22,7 +22,7 @@ const ButtonSecondary = (): JSX.Element => {
   return (
     <StyledButtonSecondary
       onClick={() => handleButtonSecondaryClick()}
-      disabledColor={selectedCar.id === 0}
+      disabledColor={selectedModel.id === 0}
     >
       {step === 1 && "Colors"}
       {step === 2 && "Accessories"}
