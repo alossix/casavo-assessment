@@ -3,9 +3,9 @@ import { CarProps, OptionsProps } from "../App";
 
 interface BuilderState {
   alertSet: boolean;
+  colorSelected: number;
   selectedCar: CarProps;
   step: number;
-  colorSelected: number;
   totalPrice: number;
 }
 
