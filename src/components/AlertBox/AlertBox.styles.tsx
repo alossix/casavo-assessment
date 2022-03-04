@@ -13,6 +13,7 @@ export const StyledAlertBoxContainer = styled.div`
     height: 7.5rem;
     position: fixed;
     bottom: 0;
+    z-index: 3;
   }
 `;
 

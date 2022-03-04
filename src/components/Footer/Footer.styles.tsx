@@ -8,9 +8,10 @@ export const StyledFooter = styled.footer`
   position: fixed;
   bottom: 0;
   background-color: ${theme.colors.white};
+  box-shadow: 0 0 25px rgb(0 0 0 / 20%);
 
   @media screen and (min-width: 1024px) {
-    height: 6.25rem;
+    height: 7.5rem;
     box-shadow: 0 0 40px rgb(0 0 0 / 10%);
   }
 

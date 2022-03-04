@@ -10,7 +10,6 @@ export const StyledColorButtonContainer = styled.div`
 export const StyledColorButton = styled.button<{
   colorCode: string;
   highlighted: boolean;
-  ref: RefObject<HTMLButtonElement>;
 }>`
   padding: 2px;
   border: 2px solid ${theme.colors.white};

@@ -7,6 +7,10 @@ export const StyledSummaryContainer = styled.div`
   gap: 2rem;
   width: 100%;
   padding-top: 1rem;
+
+  @media screen and (min-width: 768px) {
+    padding-top: 0;
+  }
 `;
 
 export const StyledSection = styled.section`
@@ -62,6 +66,10 @@ export const StyledModelTitle = styled.h3`
   line-height: 1.5rem;
   margin-bottom: 0.75rem;
 
+  @media screen and (min-width: 768px) {
+    margin-bottom: 0.65rem;
+  }
+
   @media screen and (min-width: 1024px) {
     font-size: 2.5rem;
     line-height: 2.5rem;
@@ -85,6 +93,10 @@ export const StyledColorButtonContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 0.6rem;
+
+  @media screen and (min-width: 768px) {
+    gap: 0.55rem;
+  }
 `;
 
 export const StyledColorButton = styled.button<{
@@ -122,6 +134,11 @@ export const StyledAccessoriesContainer = styled.div`
   gap: 0.5rem;
   width: 100%;
   color: ${theme.colors.darkGray};
+
+  @media screen and (min-width: 768px) {
+    margin-top: 0.25rem;
+    line-height: 1.1rem;
+  }
 
   @media screen and (min-width: 1024px) {
     align-items: center;

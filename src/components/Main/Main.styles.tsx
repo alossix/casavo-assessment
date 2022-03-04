@@ -12,7 +12,7 @@ export const StyledMainContainer = styled.main`
   }
 
   @media screen and (min-width: 1024px) {
-    margin-top: 2.75rem;
+    padding-top: 3.75rem;
   }
 
   @media screen and (min-width: 1481px) {

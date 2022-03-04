@@ -28,7 +28,7 @@ export const StyledStepMenuHeader = styled.header`
 `;
 
 export const StyledStepContainer = styled.div<{ highlighted: boolean }>`
-  padding: 0.61rem 0.7rem;
+  padding: 0.5rem 0.7rem;
   ${({ highlighted }) =>
     highlighted &&
     `
@@ -45,6 +45,7 @@ export const StyledStepTitle = styled.h3<{ disabled?: boolean }>`
   text-transform: uppercase;
   cursor: pointer;
   letter-spacing: 1.4px;
+  padding-bottom: 0.15rem;
   color: ${({ disabled }) =>
     disabled ? theme.colors.disabled : theme.colors.darkGray};
   transition: 0.3s ease;

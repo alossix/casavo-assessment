@@ -35,7 +35,6 @@ export const StyledButtonSecondary = styled.button<{
   position: relative;
   background-color: ${({ disabledColor }) =>
     disabledColor ? theme.colors.disabled : theme.colors.gold};
-  box-shadow: 0 0 25px rgb(0 0 0 / 20%);
   transition: 0.3s ease;
   animation-name: slider;
   animation-duration: 0.2s;

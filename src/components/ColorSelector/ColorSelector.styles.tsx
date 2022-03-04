@@ -5,6 +5,10 @@ export const StyledColorSelectorContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 1rem 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 0;
+  }
 `;
 
 export const StyledColorSelectorImgContainer = styled.div`
@@ -17,7 +21,7 @@ export const StyledColorSelectorImgContainer = styled.div`
   }
 
   @media screen and (min-width: 1024px) {
-    margin-bottom: 1.75rem;
+    margin: 1rem 0 2rem 0;
   }
 `;
 
@@ -26,4 +30,8 @@ export const StyledColorButtonContainer = styled.div`
   justify-content: center;
   gap: 0.75rem;
   width: 100%;
+
+  @media screen and (min-width: 768px) {
+    gap: 1.15rem;
+  }
 `;

@@ -7,6 +7,10 @@ export const StyledAccessoriesContainer = styled.div`
   gap: 1.25rem;
   width: 100%;
 
+  @media screen and (min-width: 768px) {
+    gap: 0.8rem;
+  }
+
   @media screen and (min-width: 1024px) {
     margin-top: 2rem;
     max-width: 75rem;
@@ -38,7 +42,8 @@ export const StyledAccessoryContainer = styled.div<{ checked: boolean }>`
     justify-content: space-between;
     align-items: center;
     font-size: 1.375rem;
-    padding: 2.2rem 2rem;
+    line-height: 1.4rem;
+    padding: 1.7rem 1.5rem 1.65rem 2rem;
   }
 
   @media screen and (min-width: 1024px) {
@@ -60,7 +65,7 @@ export const StyledAccessorySubContainer = styled.div`
   @media screen and (min-width: 768px) {
     flex-direction: row;
     color: ${theme.colors.black};
-    gap: 2.5rem;
+    gap: 1.8rem;
     font-size: 1.375rem;
   }
 
