@@ -7,7 +7,7 @@ import {
   StyledColorButtonContainer,
   StyledColorButton,
 } from "./ColorSelector.styles";
-import { IOptionsProps } from "../../App";
+import { OptionsProps } from "../../App";
 
 const ColorSelector = () => {
   const { selectedCar, colorSelected } = useSelector(
@@ -19,7 +19,7 @@ const ColorSelector = () => {
     (option) => option.id === colorSelected
   );
 
-  const handleColorSelect = (option: IOptionsProps) => {
+  const handleColorSelect = (option: OptionsProps) => {
     dispatch(setColorSelected(option.id));
   };
 

@@ -4,17 +4,17 @@ import {
   StyledDisplayShowcaseContainer,
   StyledMainContainer,
 } from "./Main.styles";
-import { ICarProps } from "../../App";
+import { CarProps } from "../../App";
 import DisplayShowcase from "../DisplayShowcase";
 import ColorSelector from "../ColorSelector";
 import AccessoriesSelector from "../AccessoriesSelector";
 import Summary from "../Summary";
 
-type IMainProps = {
-  cars: ICarProps[];
+type MainProps = {
+  cars: CarProps[];
 };
 
-const Main = ({ cars }: IMainProps) => {
+const Main = ({ cars }: MainProps) => {
   const { step } = useSelector((state: RootState) => state.builder);
   return (
     <StyledMainContainer>

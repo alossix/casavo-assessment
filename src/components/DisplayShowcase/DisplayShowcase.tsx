@@ -15,10 +15,10 @@ import {
   StyledPriceSpan,
 } from "./DisplayShowcase.styles";
 import Checkmark from "../../icons/Checkmark";
-import { ICarProps } from "../../App";
+import { CarProps } from "../../App";
 
-type IDisplayShowcaseProps = {
-  car: ICarProps;
+type DisplayShowcaseProps = {
+  car: CarProps;
 };
 
 const displayPriceString = (price: number) => {
@@ -31,7 +31,7 @@ const displayPriceString = (price: number) => {
     .replace(",", ".");
 };
 
-const DisplayShowcase = ({ car }: IDisplayShowcaseProps) => {
+const DisplayShowcase = ({ car }: DisplayShowcaseProps) => {
   const { id, title, price } = car;
   const { selectedCar } = useSelector((state: RootState) => state.builder);
   const dispatch = useDispatch();

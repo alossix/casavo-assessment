@@ -6,22 +6,22 @@ import Main from "./components/Main";
 import Footer from "./components/Footer";
 import { StyledOuterContainer, StyledInnerContainer } from "./App.styles";
 
-export type IOptionsProps = {
+export interface OptionsProps {
   id: number;
   title: string;
   img: string;
   colorCode: string;
   price: number;
-};
+}
 
-export type ICarProps = {
+export interface CarProps {
   id: number;
   title: string;
   price: number;
-  options: IOptionsProps[];
-};
+  options: OptionsProps[];
+}
 
-const cars: ICarProps[] = [
+const cars: CarProps[] = [
   {
     id: 1,
     title: "BMW i3",
