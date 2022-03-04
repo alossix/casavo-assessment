@@ -14,7 +14,7 @@ const TotalPrice = () => {
   );
 
   const [displaySrc] = selectedCar.options.filter(
-    (option) => option.id === colorSelected
+    (option) => option.id === colorSelected || option.id === 0
   );
 
   const displayPrice = totalPrice + displaySrc?.price;
