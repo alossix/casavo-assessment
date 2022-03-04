@@ -28,6 +28,7 @@ const initialState: BuilderState = {
       },
     ],
     accessories: [],
+    description: "",
   },
   step: 1,
   totalPrice: 0,

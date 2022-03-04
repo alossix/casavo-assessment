@@ -20,7 +20,8 @@ export const StyledColorButton = styled.button<{
   cursor: pointer;
   background-color: ${({ colorCode }) => colorCode && colorCode};
   box-shadow: 0 0 0 2px
-    ${({ highlighted }) => (highlighted ? theme.colors.gold : `#ededed`)};
+    ${({ highlighted }) =>
+      highlighted ? theme.colors.gold : theme.colors.lightGray};
 
   @media screen and (min-width: 768px) {
     width: 3.2rem;

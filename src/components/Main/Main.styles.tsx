@@ -4,9 +4,10 @@ export const StyledMainContainer = styled.main`
   display: flex;
   justify-content: center;
   padding: 1rem 5%;
+  overflow-y: scroll;
 
   @media screen and (min-width: 768px) {
-    padding: 0 5%;
+    padding: 0 5% 1rem 5%;
   }
 `;
 

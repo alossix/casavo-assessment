@@ -20,6 +20,7 @@ export interface CarProps {
   price: number;
   options: OptionsProps[];
   accessories: AccessoriesProps[];
+  description: string;
 }
 
 export interface AccessoriesProps {
@@ -72,6 +73,8 @@ const cars: CarProps[] = [
       },
     ],
     accessories: [accessories[1], accessories[2], accessories[3]],
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit saepe facilis hic, unde, numquam vel. Blanditiis sed laboriosam ratione nulla atque molestias at explicabo aperiam reprehenderit culpa nihil, quis totam cupiditate dolores in quisquam magnam inventore nobis, rem adipisci eveniet illum.",
   },
   {
     id: 2,
@@ -99,6 +102,8 @@ const cars: CarProps[] = [
       accessories[2],
       accessories[3],
     ],
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit saepe facilis hic, unde, numquam vel. Blanditiis sed laboriosam ratione nulla atque molestias at explicabo aperiam reprehenderit culpa nihil, quis totam cupiditate dolores in quisquam magnam inventore nobis, rem adipisci eveniet illum.",
   },
 ];
 

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "../../theme";
 
 export const StyledFooter = styled.footer`
   display: flex;
@@ -6,6 +7,7 @@ export const StyledFooter = styled.footer`
   width: 100vw;
   position: fixed;
   bottom: 0;
+  background-color: ${theme.colors.white};
 
   @media screen and (min-width: 1024px) {
     height: 7.5rem;
