@@ -60,6 +60,7 @@ export const StyledSelectedCarImageContainer = styled.div<{
       opacity: 0;
     }
   }
+  max-width: 10rem;
   height: 5rem;
   border-right: 1px solid ${theme.colors.lightGrayAlt};
 
