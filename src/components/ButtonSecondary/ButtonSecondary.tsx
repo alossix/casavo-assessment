@@ -24,10 +24,10 @@ const ButtonSecondary = (): JSX.Element => {
       onClick={() => handleButtonSecondaryClick()}
       disabledColor={selectedModel.id === 0}
     >
-      {step === 1 && "Colors"}
-      {step === 2 && "Accessories"}
-      {step === 3 && "Summary"}
-      {step === 4 && "Buy Now"}
+      {step === 1 && <span>Colors</span>}
+      {step === 2 && <span>Accessories</span>}
+      {step === 3 && <span>Summary</span>}
+      {step === 4 && <span>Buy Now</span>}
       <Arrow />
     </StyledButtonSecondary>
   );

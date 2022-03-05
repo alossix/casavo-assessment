@@ -21,6 +21,24 @@ export const StyledButtonSecondary = styled.button<{
       transform: translateY(0);
     }
   }
+
+  @keyframes textSlider {
+    0% {
+      transform: translateY(20px);
+    }
+    25% {
+      transform: translateY(15px);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+    75% {
+      transform: translateY(5px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,6 +67,10 @@ export const StyledButtonSecondary = styled.button<{
     position: absolute;
     bottom: 0.5rem;
     right: 1rem;
+  }
+
+  & span {
+    animation: textSlider 0.2s linear;
   }
 
   @media screen and (min-width: 1024px) {
