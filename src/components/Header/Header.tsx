@@ -35,7 +35,9 @@ const Header = () => {
         {width >= 1024 && (
           <>
             <StyledDesktopInnerContainer>
-              <ButtonPrimary>Article & Download</ButtonPrimary>
+              <ButtonPrimary aria-label="Article and Download">
+                Article & Download
+              </ButtonPrimary>
               <StyledDesktopH1>Product Builder</StyledDesktopH1>
             </StyledDesktopInnerContainer>
             <StepMenu />

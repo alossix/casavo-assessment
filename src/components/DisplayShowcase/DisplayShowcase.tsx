@@ -54,10 +54,13 @@ const DisplayShowcase = ({ car }: DisplayShowcaseProps) => {
       onClick={() => carSelectHandler(id)}
     >
       <StyledDisplayContainerTitle>{title}</StyledDisplayContainerTitle>
-      <StyledImg src={car.options[0].img} />
+      <StyledImg src={car.options[0].img} alt={car.title} />
       <StyledPriceSpan>from {displayPriceString(price)}</StyledPriceSpan>
       <StyledCheckButtonContainer>
-        <StyledCheckButton checked={selectedModel.id === id}>
+        <StyledCheckButton
+          aria-label={car.title}
+          checked={selectedModel.id === id}
+        >
           {selectedModel.id === id && <Checkmark />}
         </StyledCheckButton>
       </StyledCheckButtonContainer>

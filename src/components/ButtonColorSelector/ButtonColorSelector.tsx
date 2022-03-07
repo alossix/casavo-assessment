@@ -33,6 +33,7 @@ const ButtonColorSelector = ({
         onClick={() => handleColorSelect(option)}
         onMouseEnter={() => setInfoBubbleVisible(() => true)}
         onMouseLeave={() => setInfoBubbleVisible(() => false)}
+        aria-label={option.title}
       ></StyledColorButton>
       <InfoBubble visible={infoBubbleVisible} option={option} />
     </StyledColorButtonContainer>
